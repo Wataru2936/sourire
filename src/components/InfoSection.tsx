@@ -78,7 +78,7 @@ export default function InfoSection({ language }: SectionProps) {
           >
             {/* 基本情報 */}
             <div className="bg-cream rounded-lg p-6 shadow-elegant">
-              <h3 className="text-2xl font-bold text-wine font-serif mb-6">基本情報</h3>
+              <h3 className="text-2xl font-bold text-wine font-serif mb-6">{t.info.basicInfo}</h3>
               <div className="space-y-4">
                 {infoItems.map((item, index) => (
                   <motion.div
@@ -120,18 +120,18 @@ export default function InfoSection({ language }: SectionProps) {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-xl font-bold text-wine font-serif mb-4">営業時間</h4>
+              <h4 className="text-xl font-bold text-wine font-serif mb-4">{t.info.operatingHours}</h4>
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="font-medium">昼の営業</span>
-                  <span className="text-black/70">12:00-14:30オーダーストップ（金・土・日・祝祭日のみ）</span>
+                  <span className="font-medium">{t.info.lunchOperating}</span>
+                  <span className="text-black/70">12:00-14:30（金・土・日・祝祭日のみ）</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="font-medium">夜の営業</span>
-                  <span className="text-black/70">18:00-20:30オーダーストップ（月・火・木・金・土・日）</span>
+                  <span className="font-medium">{t.info.dinnerOperating}</span>
+                  <span className="text-black/70">18:00-20:30（月・火・木・金・土・日）</span>
                 </div>
                 <div className="pt-2 border-t border-wine/20">
-                  <span className="font-medium text-wine">基本的に水曜定休日</span>
+                  <span className="font-medium text-wine">{t.info.wednesdayClosed}</span>
                 </div>
               </div>
             </motion.div>
@@ -144,7 +144,7 @@ export default function InfoSection({ language }: SectionProps) {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-xl font-bold text-wine font-serif mb-4">特徴</h4>
+              <h4 className="text-xl font-bold text-wine font-serif mb-4">{t.info.characteristics}</h4>
               <div className="grid sm:grid-cols-2 gap-3">
                 {features.map((feature, index) => (
                   <motion.div
@@ -176,7 +176,7 @@ export default function InfoSection({ language }: SectionProps) {
             {/* Googleマップ */}
             <div className="bg-cream rounded-lg overflow-hidden shadow-elegant">
               <div className="p-4 bg-wine text-cream-light">
-                <h4 className="text-lg font-bold">アクセスマップ</h4>
+                <h4 className="text-lg font-bold">{t.info.accessMap}</h4>
               </div>
               <div className="relative h-80 bg-warm-gray flex items-center justify-center">
                 {/* 実際のGoogleマップはここに埋め込み */}
@@ -194,7 +194,7 @@ export default function InfoSection({ language }: SectionProps) {
                   <div className="text-center">
                     <MapPin className="w-8 h-8 mx-auto mb-2" />
                     <div className="font-bold">Google Map</div>
-                    <div className="text-sm opacity-90">地図を表示</div>
+                    <div className="text-sm opacity-90">{t.info.showMap}</div>
                   </div>
                 </div>
               </div>
@@ -208,11 +208,11 @@ export default function InfoSection({ language }: SectionProps) {
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-xl font-bold text-wine font-serif mb-4">アクセス</h4>
+              <h4 className="text-xl font-bold text-wine font-serif mb-4">{t.info.access}</h4>
               <div className="space-y-2 text-black/80 text-sm">
-                <div>最寄り駅：西鉄バス 赤坂３丁目</div>
+                <div>{t.info.nearestStation}</div>
                 <div>
-                  道順：<br />
+                  {t.info.directions}：<br />
                   ・西鉄バス赤坂3丁目バス停至近<br />
                   ・博多バスターミナル(4乗場)<br />
                   ・駅前A発(国体道路経由113.203.201.114.12.1136.201)約20分<br />
@@ -229,16 +229,16 @@ export default function InfoSection({ language }: SectionProps) {
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
             >
-              <h4 className="text-xl font-bold text-wine font-serif mb-4">その他</h4>
+              <h4 className="text-xl font-bold text-wine font-serif mb-4">{t.info.other}</h4>
               <div className="space-y-2 text-black/80 text-sm">
-                <div>全15席の小さなレストランです。カウンター席も5席ございます。お一人様歓迎いたします。</div>
-                <div className="font-bold mt-2">＜御利用いただく時の注意事項として＞</div>
+                <div>{t.info.restaurantInfo}</div>
+                <div className="font-bold mt-2">{t.info.notes}</div>
                 <ul className="list-disc pl-6">
-                  <li>食材ロス、より良い料理をご提供させていただく為、御予約は前日までにお願い致します</li>
-                  <li>御予約の人数変更やキャンセルはできる限り早いご連絡をお願い致します</li>
-                  <li>御予約当日のキャンセルにつきましては、御予約いただいた料理等の金額をキャンセル料としてお支払いいただくこともございますので、御留意いただきますようお願い致します</li>
+                  <li>{t.info.reservationNotes}</li>
+                  <li>{t.info.reservationChange}</li>
+                  <li>{t.info.cancellationPolicy}</li>
                 </ul>
-                <div>どうぞよろしくお願い致します</div>
+                <div>{t.info.thankYou}</div>
               </div>
             </motion.div>
           </motion.div>

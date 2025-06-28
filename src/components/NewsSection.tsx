@@ -116,7 +116,7 @@ export default function NewsSection({ language }: SectionProps) {
             {t.news.title}
           </h2>
           <p className="text-lg text-black/70 max-w-2xl mx-auto leading-relaxed">
-            レストラン・スーリールの最新情報をお届けします
+            {t.news.latestInfo}
           </p>
         </motion.div>
 
@@ -187,7 +187,7 @@ export default function NewsSection({ language }: SectionProps) {
             whileTap={{ scale: 0.95 }}
           >
             <Bell className="w-6 h-6" />
-            すべてのお知らせを見る
+            {t.news.viewAllNews}
           </motion.button>
         </motion.div>
       </div>

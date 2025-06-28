@@ -34,6 +34,12 @@ export interface Translations {
     chefTitle: string;
     chefName: string;
     chefBio: string;
+    achievements: {
+      michelinStar: string;
+      frenchExperience: string;
+      localIngredients: string;
+      franceTraining: string;
+    };
   };
   menu: {
     title: string;
@@ -46,6 +52,23 @@ export interface Translations {
     serviceCharge: string;
     allergens: string;
     seasonal: string;
+    courses: {
+      lunchCourse: string;
+      premiumLunchCourse: string;
+      dinnerCourse: string;
+      chefsTastingMenu: string;
+    };
+    descriptions: {
+      lunchCourse: string;
+      premiumLunchCourse: string;
+      dinnerCourse: string;
+      chefsTastingMenu: string;
+    };
+    features: {
+      creditCard: string;
+      noSmoking: string;
+    };
+    reservation: string;
   };
   info: {
     title: string;
@@ -65,6 +88,23 @@ export interface Translations {
     };
     access: string;
     addressDetail: string;
+    basicInfo: string;
+    operatingHours: string;
+    lunchOperating: string;
+    dinnerOperating: string;
+    wednesdayClosed: string;
+    characteristics: string;
+    accessMap: string;
+    showMap: string;
+    nearestStation: string;
+    directions: string;
+    other: string;
+    restaurantInfo: string;
+    notes: string;
+    reservationNotes: string;
+    cancellationPolicy: string;
+    reservationChange: string;
+    thankYou: string;
   };
   news: {
     title: string;
@@ -77,6 +117,8 @@ export interface Translations {
       holiday: string;
       menuUpdate: string;
     };
+    latestInfo: string;
+    viewAllNews: string;
   };
   instagram: {
     title: string;
@@ -88,6 +130,11 @@ export interface Translations {
     copyright: string;
     privacy: string;
     languages: string;
+    description: string;
+    address: string;
+    lunchHours: string;
+    dinnerHours: string;
+    wednesdayClosed: string;
   };
   seo: {
     title: string;
@@ -130,7 +177,7 @@ export interface Translations {
 export const translations: Record<Language, Translations> = {
   ja: {
     common: {
-      reservation: 'ご予約',
+      reservation: '',
       phone: 'お電話',
       email: 'メール',
       instagram: 'Instagram',
@@ -161,6 +208,12 @@ export const translations: Record<Language, Translations> = {
       chefTitle: 'シェフ',
       chefName: '水元康裕',
       chefBio: 'フランス修行を経て、レストランひらまつ入社。伝統的なフレンチ技法に九州の食材の美味しさを融合させた独自の料理スタイルを確立。2019年ミシュラン一つ星を獲得。',
+      achievements: {
+        michelinStar: 'ミシュラン一つ星獲得',
+        frenchExperience: '年のフレンチ経験',
+        localIngredients: '九州の旬の食材',
+        franceTraining: '本場フランスでの修行',
+      },
     },
     menu: {
       title: 'コース料理',
@@ -173,13 +226,30 @@ export const translations: Record<Language, Translations> = {
       serviceCharge: 'サービス料10%別途',
       allergens: 'アレルギー情報',
       seasonal: '季節の食材により内容が変わります',
+      courses: {
+        lunchCourse: 'ランチコース',
+        premiumLunchCourse: 'ディナーコース',
+        dinnerCourse: 'ディナーコース',
+        chefsTastingMenu: 'シェフおまかせコース',
+      },
+      descriptions: {
+        lunchCourse: '季節の前菜、魚料理、肉料理、デザート、コーヒー',
+        premiumLunchCourse: 'アミューズ、前菜2品、魚料理、肉料理、デザート、小菓子、コーヒー',
+        dinnerCourse: 'アミューズ、前菜、スープ、魚料理、肉料理、チーズ、デザート、小菓子、コーヒー',
+        chefsTastingMenu: 'シェフが厳選した特別な食材を使用した本日のおまかせコース（8品）',
+      },
+      features: {
+        creditCard: 'クレジットカード使用可',
+        noSmoking: '完全禁煙',
+      },
+      reservation: '予約する',
     },
     info: {
       title: '店舗情報',
       location: '所在地',
       businessHours: '営業時間',
-      lunchHours: 'ランチ 112:00-14:30（L.O.13:00）',
-      dinnerHours: 'ディナー 18:00-20:30（L.O.20:00）',
+      lunchHours: 'ランチ 12:00-14:30',
+      dinnerHours: 'ディナー 18:00-20:30',
       closedDays: '毎週月曜日、第1・第3火曜日',
       phone: '092-xxx-xxxx',
       email: 'info@sourire-fukuoka.com',
@@ -192,6 +262,23 @@ export const translations: Record<Language, Translations> = {
       },
       access: '福岡市営地下鉄赤坂駅から徒歩15分',
       addressDetail: '福岡市営地下鉄赤坂駅から徒歩15分',
+      basicInfo: '基本情報',
+      operatingHours: '営業時間',
+      lunchOperating: '昼の営業',
+      dinnerOperating: '夜の営業',
+      wednesdayClosed: '基本的に水曜定休日',
+      characteristics: '特徴',
+      accessMap: 'アクセスマップ',
+      showMap: '地図を表示',
+      nearestStation: '最寄り駅：西鉄バス 赤坂３丁目',
+      directions: '道順',
+      other: 'その他',
+      restaurantInfo: '全15席の小さなレストランです。カウンター席も5席ございます。お一人様歓迎いたします。',
+      notes: '＜御利用いただく時の注意事項として＞',
+      reservationNotes: '食材ロス、より良い料理をご提供させていただく為、御予約は前日までにお願い致します',
+      cancellationPolicy: '御予約当日のキャンセルにつきましては、御予約いただいた料理等の金額をキャンセル料としてお支払いいただくこともございますので、御留意いただきますようお願い致します',
+      reservationChange: '予約人数の変更やキャンセルはできる限り早いご連絡をお願い致します',
+      thankYou: 'どうぞよろしくお願い致します',
     },
     news: {
       title: 'お知らせ',
@@ -204,6 +291,8 @@ export const translations: Record<Language, Translations> = {
         holiday: '休業案内',
         menuUpdate: 'メニュー更新',
       },
+      latestInfo: 'レストラン・スーリールの最新情報をお届けします',
+      viewAllNews: 'すべてのお知らせを見る',
     },
     instagram: {
       title: 'スーリールのInstagram',
@@ -215,6 +304,11 @@ export const translations: Record<Language, Translations> = {
       copyright: '© 2025 Restaurant Sourire. All rights reserved.',
       privacy: 'プライバシーポリシー',
       languages: '言語を選択',
+      description: 'フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。福岡けやき通りで皆様のお越しをお待ちしております。',
+      address: '福岡県福岡市中央区赤坂2丁目6-5-104 パークハイツ赤坂 1F-4',
+      lunchHours: 'ランチ 12:00-14:30',
+      dinnerHours: 'ディナー 18:00-20:30',
+      wednesdayClosed: '基本的に水曜定休日',
     },
     seo: {
       title: 'レストラン スーリール',
@@ -285,6 +379,12 @@ export const translations: Record<Language, Translations> = {
       chefTitle: 'Chef',
       chefName: 'Ichiro Tanaka',
       chefBio: 'After training in France, established a unique culinary style that fuses traditional French techniques with the finest Kyushu ingredients. Awarded Michelin One Star in 2019.',
+      achievements: {
+        michelinStar: 'Michelin One Star',
+        frenchExperience: 'French Experience',
+        localIngredients: 'Local Ingredients',
+        franceTraining: 'France Training',
+      },
     },
     menu: {
       title: 'Course Menu',
@@ -297,6 +397,23 @@ export const translations: Record<Language, Translations> = {
       serviceCharge: '10% service charge not included',
       allergens: 'Allergy Information',
       seasonal: 'Menu may change according to seasonal ingredients',
+      courses: {
+        lunchCourse: 'Lunch Course',
+        premiumLunchCourse: 'Premium Lunch Course',
+        dinnerCourse: 'Dinner Course',
+        chefsTastingMenu: 'Chef\'s Tasting Menu',
+      },
+      descriptions: {
+        lunchCourse: 'Lunch Course Description',
+        premiumLunchCourse: 'Premium Lunch Course Description',
+        dinnerCourse: 'Dinner Course Description',
+        chefsTastingMenu: 'Chef\'s Tasting Menu Description',
+      },
+      features: {
+        creditCard: 'Credit Cards Accepted',
+        noSmoking: 'Non-smoking establishment',
+      },
+      reservation: 'Make a Reservation',
     },
     info: {
       title: 'Restaurant Information',
@@ -316,6 +433,23 @@ export const translations: Record<Language, Translations> = {
       },
       access: '5-minute walk from Nishitetsu Fukuoka (Tenjin) Station',
       addressDetail: '1F-4 Park Heights Akasaka, 2-6-5 Akasaka, Chuo-ku, Fukuoka, Fukuoka Prefecture 810-0042, Japan',
+      basicInfo: 'Basic Information',
+      operatingHours: 'Operating Hours',
+      lunchOperating: 'Lunch Operating Hours',
+      dinnerOperating: 'Dinner Operating Hours',
+      wednesdayClosed: 'Wednesday Closed',
+      characteristics: 'Characteristics',
+      accessMap: 'Access Map',
+      showMap: 'Show Map',
+      nearestStation: 'Nearest Station',
+      directions: 'Directions',
+      other: 'Other Information',
+      restaurantInfo: 'Restaurant Information',
+      notes: 'Notes',
+      reservationNotes: 'Reservation Notes',
+      cancellationPolicy: 'Cancellation Policy',
+      reservationChange: 'Reservation Change',
+      thankYou: 'Thank You',
     },
     news: {
       title: 'News & Updates',
@@ -328,6 +462,8 @@ export const translations: Record<Language, Translations> = {
         holiday: 'Holiday Notice',
         menuUpdate: 'Menu Update',
       },
+      latestInfo: 'Latest Information',
+      viewAllNews: 'View All News',
     },
     instagram: {
       title: 'Sourire\'s Daily Journal',
@@ -339,6 +475,11 @@ export const translations: Record<Language, Translations> = {
       copyright: '© 2025 Restaurant Sourire. All rights reserved.',
       privacy: 'Privacy Policy',
       languages: 'Select Language',
+      description: 'Restaurant Introduction',
+      address: 'Address',
+      lunchHours: 'Lunch Hours',
+      dinnerHours: 'Dinner Hours',
+      wednesdayClosed: 'Wednesday Closed',
     },
     seo: {
       title: 'Restaurant Sourire | Michelin One Star French in Fukuoka',
@@ -409,6 +550,12 @@ export const translations: Record<Language, Translations> = {
       chefTitle: '主厨',
       chefName: '田中一郎',
       chefBio: '在法国修业后，建立了融合传统法式技法与九州优质食材的独特料理风格。2019年获得米其林一星。',
+      achievements: {
+        michelinStar: '米其林一星',
+        frenchExperience: '法国料理经验',
+        localIngredients: '本地食材',
+        franceTraining: '法国修行',
+      },
     },
     menu: {
       title: '套餐料理',
@@ -421,6 +568,23 @@ export const translations: Record<Language, Translations> = {
       serviceCharge: '服务费10%另收',
       allergens: '过敏原信息',
       seasonal: '根据时令食材，内容可能有所变化',
+      courses: {
+        lunchCourse: '午餐套餐',
+        premiumLunchCourse: '高级午餐套餐',
+        dinnerCourse: '晚餐套餐',
+        chefsTastingMenu: '主厨品尝菜单',
+      },
+      descriptions: {
+        lunchCourse: '午餐套餐描述',
+        premiumLunchCourse: '高级午餐套餐描述',
+        dinnerCourse: '晚餐套餐描述',
+        chefsTastingMenu: '主厨品尝菜单描述',
+      },
+      features: {
+        creditCard: '接受信用卡',
+        noSmoking: '全店禁烟',
+      },
+      reservation: '立即预约',
     },
     info: {
       title: '餐厅信息',
@@ -440,6 +604,23 @@ export const translations: Record<Language, Translations> = {
       },
       access: '从西铁福冈（天神）站步行5分钟',
       addressDetail: '日本福冈县福冈市中央区赤坂2-6-5-104 Park Heights Akasaka 1F-4，邮编810-0042',
+      basicInfo: '基本信息',
+      operatingHours: '营业时间',
+      lunchOperating: '午餐营业时间',
+      dinnerOperating: '晚餐营业时间',
+      wednesdayClosed: '周三休息',
+      characteristics: '餐厅特色',
+      accessMap: '访问地图',
+      showMap: '显示地图',
+      nearestStation: '最近车站',
+      directions: '路线',
+      other: '其他信息',
+      restaurantInfo: '餐厅信息',
+      notes: '注意事项',
+      reservationNotes: '预约须知',
+      cancellationPolicy: '取消政策',
+      reservationChange: '预约人数的变更或取消请尽量早些联系',
+      thankYou: '谢谢',
     },
     news: {
       title: '最新通知',
@@ -452,6 +633,8 @@ export const translations: Record<Language, Translations> = {
         holiday: '休业通知',
         menuUpdate: '菜单更新',
       },
+      latestInfo: '最新信息',
+      viewAllNews: '查看所有通知',
     },
     instagram: {
       title: '微笑餐厅日记',
@@ -463,6 +646,11 @@ export const translations: Record<Language, Translations> = {
       copyright: '© 2025 微笑餐厅 版权所有',
       privacy: '隐私政策',
       languages: '选择语言',
+      description: '餐厅介绍',
+      address: '地址',
+      lunchHours: '午餐时间',
+      dinnerHours: '晚餐时间',
+      wednesdayClosed: '周三休息',
     },
     seo: {
       title: '微笑餐厅 | 福冈米其林一星法餐',
@@ -533,6 +721,12 @@ export const translations: Record<Language, Translations> = {
       chefTitle: '셰프',
       chefName: '타나카 이치로',
       chefBio: '프랑스 수업을 거쳐 전통적인 프렌치 기법에 규슈 식재료의 맛을 융합한 독특한 요리 스타일을 확립했습니다. 2019년 미슐랭 1스타를 획득했습니다.',
+      achievements: {
+        michelinStar: '미슐랭 1스타',
+        frenchExperience: '프랑스 경험',
+        localIngredients: '규슈 식재료',
+        franceTraining: '프랑스 수업',
+      },
     },
     menu: {
       title: '코스 요리',
@@ -545,6 +739,23 @@ export const translations: Record<Language, Translations> = {
       serviceCharge: '서비스료 10% 별도',
       allergens: '알레르기 정보',
       seasonal: '계절 식재료에 따라 내용이 변경될 수 있습니다',
+      courses: {
+        lunchCourse: '런치 코스',
+        premiumLunchCourse: '프리미엄 런치 코스',
+        dinnerCourse: '디너 코스',
+        chefsTastingMenu: '셰프의 맛 탐구 메뉴',
+      },
+      descriptions: {
+        lunchCourse: '런치 코스 설명',
+        premiumLunchCourse: '프리미엄 런치 코스 설명',
+        dinnerCourse: '디너 코스 설명',
+        chefsTastingMenu: '셰프의 맛 탐구 메뉴 설명',
+      },
+      features: {
+        creditCard: '신용카드 사용 가능',
+        noSmoking: '전체 금연',
+      },
+      reservation: '예약하기',
     },
     info: {
       title: '매장 정보',
@@ -564,6 +775,23 @@ export const translations: Record<Language, Translations> = {
       },
       access: '니시테츠 후쿠오카(텐진)역에서 도보 5분',
       addressDetail: '일본 후쿠오카현 후쿠오카시 주오구 아카사카 2-6-5-104 파크 하이츠 아카사카 1F-4, 810-0042',
+      basicInfo: '기본 정보',
+      operatingHours: '운영 시간',
+      lunchOperating: '런치 운영 시간',
+      dinnerOperating: '디너 운영 시간',
+      wednesdayClosed: '수요일 휴무',
+      characteristics: '매장 특성',
+      accessMap: '접근 지도',
+      showMap: '지도 보기',
+      nearestStation: '가장 가까운 역',
+      directions: '길찾기',
+      other: '기타 정보',
+      restaurantInfo: '레스토랑 정보',
+      notes: '주의 사항',
+      reservationNotes: '예약 주의 사항',
+      cancellationPolicy: '취소 정책',
+      reservationChange: '예약 인원 변경 또는 취소는 가능한 한 빨리 연락을 부탁드립니다',
+      thankYou: '감사합니다',
     },
     news: {
       title: '공지사항',
@@ -576,6 +804,8 @@ export const translations: Record<Language, Translations> = {
         holiday: '휴업 안내',
         menuUpdate: '메뉴 업데이트',
       },
+      latestInfo: '최신 정보',
+      viewAllNews: '모든 공지사항 보기',
     },
     instagram: {
       title: '수리르의 일기',
@@ -587,6 +817,11 @@ export const translations: Record<Language, Translations> = {
       copyright: '© 2025 Restaurant Sourire. All rights reserved.',
       privacy: '개인정보처리방침',
       languages: '언어 선택',
+      description: '레스토랑 소개',
+      address: '주소',
+      lunchHours: '런치 운영 시간',
+      dinnerHours: '디너 운영 시간',
+      wednesdayClosed: '수요일 휴무',
     },
     seo: {
       title: '레스토랑 수리르 | 후쿠오카 미슐랭 1스타 프렌치',

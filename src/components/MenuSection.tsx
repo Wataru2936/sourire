@@ -53,6 +53,18 @@ export default function MenuSection({ language }: SectionProps) {
   const [activeTab, setActiveTab] = useState<'lunch' | 'dinner'>('lunch')
   const t = getTranslation(language)
 
+  // 翻訳データを使用してメニューデータを動的に生成
+  const getMenuData = () => {
+    const baseData = menuData[activeTab]
+    return baseData.map(item => ({
+      ...item,
+      name: language === 'ja' ? item.name : item.nameEn,
+      description: language === 'ja' ? item.description : item.descriptionEn
+    }))
+  }
+
+  const currentMenuData = getMenuData()
+
   return (
     <section id="menu" className="section-spacing bg-warm-gray">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,7 +124,7 @@ export default function MenuSection({ language }: SectionProps) {
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          {menuData[activeTab].map((course, index) => (
+          {currentMenuData.map((course, index) => (
             <motion.div
               key={course.id}
               className="bg-cream rounded-lg overflow-hidden shadow-elegant hover:shadow-xl transition-all duration-500"
@@ -141,10 +153,10 @@ export default function MenuSection({ language }: SectionProps) {
               {/* コンテンツ */}
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-wine font-serif mb-2">
-                  {language === 'ja' ? course.name : course.nameEn}
+                  {course.name}
                 </h3>
                 <p className="text-black/70 leading-relaxed mb-4">
-                  {language === 'ja' ? course.description : course.descriptionEn}
+                  {course.description}
                 </p>
                 
                 <div className="flex items-center justify-between">
@@ -155,7 +167,7 @@ export default function MenuSection({ language }: SectionProps) {
                     href="#contact"
                     className="bg-wine hover:bg-wine-dark text-cream-light px-6 py-2 rounded-full font-medium transition-all duration-300 flex items-center justify-center"
                   >
-                    <span className="text-cream-light">予約する</span>
+                    <span className="text-cream-light">{t.menu.reservation}</span>
                   </a>
                 </div>
               </div>
@@ -175,9 +187,9 @@ export default function MenuSection({ language }: SectionProps) {
             {t.menu.allergens}をお持ちの方は、ご予約時にお申し付けください。
           </p>
           <div className="flex justify-center items-center gap-4 text-sm text-black/50">
-            <span>クレジットカード使用可</span>
+            <span>{t.menu.features.creditCard}</span>
             <span>•</span>
-            <span>完全禁煙</span>
+            <span>{t.menu.features.noSmoking}</span>
           </div>
         </motion.div>
       </div>

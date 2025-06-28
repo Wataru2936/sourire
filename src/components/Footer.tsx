@@ -66,10 +66,7 @@ export default function Footer({ language }: SectionProps) {
             </div>
 
             <p className="text-cream-light/80 leading-relaxed mb-8 max-w-md">
-              {language === 'ja' 
-                ? 'フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。福岡けやき通りで皆様のお越しをお待ちしております。'
-                : 'Experience exquisite French cuisine featuring the finest seasonal ingredients from Kyushu. We await your visit on Keyaki-dori, Hakata.'
-              }
+              {t.footer.description}
             </p>
 
             {/* 予約CTAボタン */}
@@ -124,7 +121,7 @@ export default function Footer({ language }: SectionProps) {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gold-light mt-1 flex-shrink-0" />
                 <div className="text-cream-light/80 text-sm leading-relaxed">
-                  福岡県福岡市中央区赤坂2丁目6-5-104 パークハイツ赤坂 1F-4<br/>
+                  {t.footer.address}<br/>
                   {language !== 'ja' && '1-2-3 Keyaki-dori, Chuo-ku, Fukuoka City'}
                 </div>
               </div>
@@ -132,9 +129,9 @@ export default function Footer({ language }: SectionProps) {
               <div className="flex items-start gap-3">
                 <Clock className="w-5 h-5 text-gold-light mt-1 flex-shrink-0" />
                 <div className="text-cream-light/80 text-sm">
-                  <div>ランチ 12:00-14:30</div>
-                  <div>ディナー 18:00-20:30</div>
-                  <div className="text-gold-light mt-1">基本的に水曜定休日</div>
+                  <div>{t.footer.lunchHours}</div>
+                  <div>{t.footer.dinnerHours}</div>
+                  <div className="text-gold-light mt-1">{t.footer.wednesdayClosed}</div>
                 </div>
               </div>
             </div>

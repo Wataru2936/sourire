@@ -71,7 +71,7 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
               <motion.a
                 key={item.href}
                 href={item.href}
-                className="text-black hover:text-wine transition-colors duration-300 font-medium tracking-wide relative group"
+                className="text-black hover:text-wine transition-colors duration-300 font-medium tracking-wide relative group whitespace-nowrap"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}

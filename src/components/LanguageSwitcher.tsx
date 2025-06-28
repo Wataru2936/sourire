@@ -12,7 +12,7 @@ export default function LanguageSwitcher({ currentLanguage, onLanguageChange }: 
   const languages: Language[] = ['ja', 'en', 'zh', 'ko']
 
   return (
-    <div className="relative">
+    <div className="relative z-50">
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         className="bg-wine/90 backdrop-blur-elegant text-cream-light p-3 rounded-full shadow-elegant hover:bg-wine transition-all duration-300 flex items-center gap-2"
@@ -22,7 +22,7 @@ export default function LanguageSwitcher({ currentLanguage, onLanguageChange }: 
       >
         <Globe className="w-5 h-5" />
         <span className="text-sm font-medium hidden sm:block">
-          {LANGUAGE_FLAGS[currentLanguage]} {LANGUAGE_LABELS[currentLanguage]}
+          {LANGUAGE_FLAGS[currentLanguage]}
         </span>
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
@@ -41,7 +41,7 @@ export default function LanguageSwitcher({ currentLanguage, onLanguageChange }: 
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full mt-2 right-0 bg-cream/95 backdrop-blur-elegant rounded-lg shadow-elegant border border-wine/20 overflow-hidden min-w-[160px]"
+            className="absolute top-full mt-2 left-1/2 sm:left-auto -translate-x-1/2 sm:translate-x-0 right-auto sm:right-0 bg-cream/95 backdrop-blur-elegant rounded-lg shadow-elegant border border-wine/20 overflow-hidden min-w-[160px]"
           >
             {languages.map((language) => (
               <motion.button

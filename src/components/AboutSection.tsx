@@ -133,19 +133,19 @@ export default function AboutSection({ language }: SectionProps) {
             >
               <div className="text-center p-4 bg-wine/5 rounded-lg">
                 <div className="text-2xl font-bold text-wine font-serif">2019</div>
-                <div className="text-sm text-black/70">ミシュラン一つ星獲得</div>
+                <div className="text-sm text-black/70">{t.about.achievements.michelinStar}</div>
               </div>
               <div className="text-center p-4 bg-wine/5 rounded-lg">
                 <div className="text-2xl font-bold text-wine font-serif">30+</div>
-                <div className="text-sm text-black/70">年のフレンチ経験</div>
+                <div className="text-sm text-black/70">{t.about.achievements.frenchExperience}</div>
               </div>
               <div className="text-center p-4 bg-wine/5 rounded-lg">
                 <div className="text-2xl font-bold text-wine font-serif">Local</div>
-                <div className="text-sm text-black/70">九州の旬の食材</div>
+                <div className="text-sm text-black/70">{t.about.achievements.localIngredients}</div>
               </div>
               <div className="text-center p-4 bg-wine/5 rounded-lg">
                 <div className="text-2xl font-bold text-wine font-serif">France</div>
-                <div className="text-sm text-black/70">本場フランスでの修行</div>
+                <div className="text-sm text-black/70">{t.about.achievements.franceTraining}</div>
               </div>
             </motion.div>
           </motion.div>
