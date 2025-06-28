@@ -114,7 +114,7 @@ export interface ApiEndpoint {
 export interface ApiError {
   message: string;
   code: number;
-  details?: any;
+  details?: unknown;
 }
 
 export interface ApiResponse<T> {
