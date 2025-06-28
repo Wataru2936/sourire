@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { SectionProps } from '@/types'
 import { getTranslation } from '@/lib/i18n'
@@ -8,18 +8,8 @@ import Image from 'next/image'
 import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Header({ language }: SectionProps) {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const t = getTranslation(language)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const navItems = [
     { href: '#hero', label: 'Home' },

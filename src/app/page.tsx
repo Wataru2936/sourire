@@ -17,7 +17,6 @@ import LanguageSwitcher from '@/components/LanguageSwitcher'
 
 export default function Home() {
   const [currentLanguage, setCurrentLanguage] = useState<Language>(DEFAULT_LANGUAGE)
-  const t = getTranslation(currentLanguage)
 
   const handleLanguageChange = (language: Language) => {
     setCurrentLanguage(language)

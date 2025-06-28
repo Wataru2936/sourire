@@ -121,4 +121,6 @@ export interface ApiResponse<T> {
   success: boolean;
   data?: T;
   error?: ApiError;
-} 
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any 

@@ -95,7 +95,7 @@ export default function AboutSection({ language }: SectionProps) {
               viewport={{ once: true }}
             >
               <blockquote className="text-2xl sm:text-3xl font-serif text-wine italic leading-relaxed border-l-4 border-gold pl-6">
-                "{t.about.philosophy}"
+                &quot;{t.about.philosophy}&quot;
               </blockquote>
               <p className="text-lg text-black/80 leading-relaxed">
                 {t.about.experience}

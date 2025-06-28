@@ -52,7 +52,6 @@ export default function InstagramSection({ language }: SectionProps) {
             height="480"
             frameBorder="0"
             scrolling="no"
-            allowTransparency={true}
             allow="encrypted-media"
             className="rounded-xl shadow-elegant bg-white"
             title="Instagram最新投稿"
