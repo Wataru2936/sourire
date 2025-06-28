@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Language } from '@/types'
-import { getTranslation, DEFAULT_LANGUAGE } from '@/lib/i18n'
+import { DEFAULT_LANGUAGE } from '@/lib/i18n'
 
 // コンポーネントのインポート（後で作成）
 import Header from '@/components/Header'

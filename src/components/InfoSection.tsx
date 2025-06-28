@@ -12,8 +12,8 @@ export default function InfoSection({ language }: SectionProps) {
     {
       icon: <MapPin className="w-6 h-6" />,
       label: t.info.location,
-      value: '福岡県福岡市中央区赤坂2丁目6-5-104 パークハイツ赤坂 1F-4',
-      valueEn: '1-2-3 Keyaki-dori, Chuo-ku, Fukuoka City, Fukuoka Prefecture'
+      value: t.info.addressDetail,
+      valueEn: t.info.addressDetail
     },
     {
       icon: <Phone className="w-6 h-6" />,

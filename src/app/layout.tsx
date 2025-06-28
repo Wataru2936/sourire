@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Serif_JP, Playfair_Display, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
+import { getTranslation, DEFAULT_LANGUAGE } from '@/lib/i18n'
 
 // Google Fontsの設定
 const notoSerifJP = Noto_Serif_JP({
@@ -21,25 +22,15 @@ const cormorantGaramond = Cormorant_Garamond({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const t = getTranslation(DEFAULT_LANGUAGE)
+
 export const metadata: Metadata = {
   title: {
-    default: "レストラン スーリール | 福岡・けやき通りのミシュラン一つ星フレンチ",
-    template: "%s | レストラン スーリール"
+    default: t.seo.title,
+    template: `%s | ${t.seo.title}`
   },
-  description: "福岡市・けやき通りにあるミシュラン一つ星フレンチレストラン「スーリール」。フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。",
-  keywords: [
-    "レストラン スーリール",
-    "Restaurant Sourire",
-    "福岡",
-    "けやき通り",
-    "ミシュラン一つ星",
-    "フレンチ",
-    "French restaurant",
-    "Fukuoka",
-    "高級レストラン",
-    "コース料理",
-    "予約"
-  ],
+  description: t.seo.description,
+  keywords: t.seo.keywords,
   authors: [{ name: "Restaurant Sourire" }],
   creator: "Restaurant Sourire",
   publisher: "Restaurant Sourire",
@@ -62,22 +53,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ja_JP',
     url: 'https://sourire-fukuoka.com',
-    title: 'レストラン スーリール | 福岡・けやき通りのミシュラン一つ星フレンチ',
-    description: 'フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。',
+    title: t.seo.ogTitle,
+    description: t.seo.ogDescription,
     siteName: 'Restaurant Sourire',
     images: [
       {
         url: '/images/og/og-main.jpg',
         width: 1200,
         height: 630,
-        alt: 'レストラン スーリール - 福岡・けやき通りのミシュラン一つ星フレンチ',
+        alt: t.seo.ogImageAlt,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'レストラン スーリール | 福岡・けやき通りのミシュラン一つ星フレンチ',
-    description: 'フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。',
+    title: t.seo.twitterTitle,
+    description: t.seo.twitterDescription,
     images: ['/images/og/og-main.jpg'],
   },
   robots: {
@@ -119,39 +110,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Restaurant",
-              "name": "レストラン スーリール",
-              "alternateName": "Restaurant Sourire",
-              "description": "福岡市・けやき通りにあるミシュラン一つ星フレンチレストラン",
-              "image": "https://sourire-fukuoka.com/images/og/og-main.jpg",
-              "url": "https://sourire-fukuoka.com",
-              "telephone": "+81-92-xxx-xxxx",
-              "email": "info@sourire-fukuoka.com",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "けやき通り",
-                "addressLocality": "福岡市",
-                "addressRegion": "福岡県",
-                "addressCountry": "JP"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "33.5904",
-                "longitude": "130.4017"
-              },
-              "openingHours": [
-                "Tu-Su 12:00-14:30",
-                "Tu-Su 18:00-20:30"
-              ],
-              "servesCuisine": "French",
-              "priceRange": "$$$$",
-              "acceptsReservations": true,
-              "hasMenu": "https://sourire-fukuoka.com#menu",
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "reviewCount": "150"
-              },
-              "award": "Michelin 1 Star"
+              ...t.seo.structuredData
             })
           }}
         />

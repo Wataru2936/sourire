@@ -62,6 +62,7 @@ export interface Translations {
       dresscode: string;
     };
     access: string;
+    addressDetail: string;
   };
   news: {
     title: string;
@@ -85,6 +86,41 @@ export interface Translations {
     copyright: string;
     privacy: string;
     languages: string;
+  };
+  seo: {
+    title: string;
+    description: string;
+    keywords: string[];
+    ogTitle: string;
+    ogDescription: string;
+    ogImageAlt: string;
+    twitterTitle: string;
+    twitterDescription: string;
+    structuredData: {
+      name: string;
+      alternateName: string;
+      description: string;
+      streetAddress: string;
+      addressLocality: string;
+      addressRegion: string;
+      addressCountry: string;
+      image: string;
+      url: string;
+      telephone: string;
+      email: string;
+      latitude: string;
+      longitude: string;
+      openingHours: string[];
+      servesCuisine: string;
+      priceRange: string;
+      acceptsReservations: boolean;
+      hasMenu: string;
+      aggregateRating: {
+        ratingValue: string;
+        reviewCount: string;
+      };
+      award: string;
+    };
   };
 }
 
@@ -151,6 +187,7 @@ export const translations: Record<Language, Translations> = {
         dresscode: 'スマートカジュアル',
       },
       access: '福岡市営地下鉄赤坂駅から徒歩15分',
+      addressDetail: '福岡市営地下鉄赤坂駅から徒歩15分',
     },
     news: {
       title: 'お知らせ',
@@ -174,6 +211,41 @@ export const translations: Record<Language, Translations> = {
       copyright: '© 2025 Restaurant Sourire. All rights reserved.',
       privacy: 'プライバシーポリシー',
       languages: '言語を選択',
+    },
+    seo: {
+      title: 'レストラン スーリール',
+      description: 'レストラン スーリールの詳細情報',
+      keywords: ['レストラン', 'スーリール', 'フランス料理', '福岡'],
+      ogTitle: 'レストラン スーリール',
+      ogDescription: 'レストラン スーリールの詳細情報',
+      ogImageAlt: 'レストラン スーリールの外観',
+      twitterTitle: 'レストラン スーリール',
+      twitterDescription: 'レストラン スーリールの詳細情報',
+      structuredData: {
+        name: 'レストラン スーリール',
+        alternateName: 'Restaurant Sourire',
+        description: 'レストラン スーリールの詳細情報',
+        streetAddress: '福岡市営地下鉄赤坂駅',
+        addressLocality: '福岡市',
+        addressRegion: '福岡県',
+        addressCountry: '日本',
+        image: 'https://example.com/sourire-fukuoka.jpg',
+        url: 'https://example.com/restaurant-sourire',
+        telephone: '092-xxx-xxxx',
+        email: 'info@sourire-fukuoka.com',
+        latitude: '33.5904',
+        longitude: '130.4214',
+        openingHours: ['11:00-15:00', '18:00-21:00'],
+        servesCuisine: 'フランス料理',
+        priceRange: '¥5,000 - ¥10,000',
+        acceptsReservations: true,
+        hasMenu: 'コース料理',
+        aggregateRating: {
+          ratingValue: '4.5',
+          reviewCount: '120',
+        },
+        award: 'ミシュラン一つ星',
+      },
     },
   },
   en: {
@@ -237,6 +309,7 @@ export const translations: Record<Language, Translations> = {
         dresscode: 'Smart Casual',
       },
       access: '5-minute walk from Nishitetsu Fukuoka (Tenjin) Station',
+      addressDetail: '1F-4 Park Heights Akasaka, 2-6-5 Akasaka, Chuo-ku, Fukuoka, Fukuoka Prefecture 810-0042, Japan',
     },
     news: {
       title: 'News & Updates',
@@ -260,6 +333,41 @@ export const translations: Record<Language, Translations> = {
       copyright: '© 2025 Restaurant Sourire. All rights reserved.',
       privacy: 'Privacy Policy',
       languages: 'Select Language',
+    },
+    seo: {
+      title: 'Restaurant Sourire | Michelin One Star French in Fukuoka',
+      description: 'Restaurant Sourire is a Michelin one-star French restaurant located on Keyaki-dori, Fukuoka. Enjoy authentic French cuisine with seasonal Kyushu ingredients.',
+      keywords: ['Restaurant Sourire', 'French', 'Fukuoka', 'Michelin Star', 'Course Menu', 'Reservation'],
+      ogTitle: 'Restaurant Sourire | Michelin One Star French in Fukuoka',
+      ogDescription: 'Experience classic French cuisine and Kyushu's seasonal flavors at Restaurant Sourire, a Michelin one-star restaurant in Fukuoka.',
+      ogImageAlt: 'Exterior of Restaurant Sourire in Fukuoka',
+      twitterTitle: 'Restaurant Sourire | Michelin One Star French in Fukuoka',
+      twitterDescription: 'Enjoy authentic French cuisine and seasonal ingredients at Restaurant Sourire, Fukuoka.',
+      structuredData: {
+        name: 'Restaurant Sourire',
+        alternateName: 'レストラン スーリール',
+        description: 'Restaurant Sourire is a Michelin one-star French restaurant in Fukuoka, offering authentic French cuisine with Kyushu's seasonal ingredients.',
+        streetAddress: '1F-4 Park Heights Akasaka, 2-6-5 Akasaka, Chuo-ku',
+        addressLocality: 'Fukuoka City',
+        addressRegion: 'Fukuoka Prefecture',
+        addressCountry: 'Japan',
+        image: 'https://sourire-fukuoka.com/images/og/og-main.jpg',
+        url: 'https://sourire-fukuoka.com',
+        telephone: '+81-92-753-6324',
+        email: 'info@sourire-fukuoka.com',
+        latitude: '33.583971',
+        longitude: '130.392956',
+        openingHours: ['Tu-Su 12:00-14:30', 'Tu-Su 18:00-20:30'],
+        servesCuisine: 'French',
+        priceRange: '$$$$',
+        acceptsReservations: true,
+        hasMenu: 'https://sourire-fukuoka.com#menu',
+        aggregateRating: {
+          ratingValue: '4.8',
+          reviewCount: '150',
+        },
+        award: 'Michelin 1 Star',
+      },
     },
   },
   zh: {
@@ -323,6 +431,7 @@ export const translations: Record<Language, Translations> = {
         dresscode: '智能休闲装',
       },
       access: '从西铁福冈（天神）站步行5分钟',
+      addressDetail: '日本福冈县福冈市中央区赤坂2-6-5-104 Park Heights Akasaka 1F-4，邮编810-0042',
     },
     news: {
       title: '最新通知',
@@ -347,6 +456,41 @@ export const translations: Record<Language, Translations> = {
       privacy: '隐私政策',
       languages: '选择语言',
     },
+    seo: {
+      title: '微笑餐厅 | 福冈米其林一星法餐',
+      description: '微笑餐厅是一家位于福冈けやき通的米其林一星法式餐厅，融合九州时令食材与正统法式技法，带来极致美食体验。',
+      keywords: ['微笑餐厅', '法餐', '福冈', '米其林一星', '套餐', '预约'],
+      ogTitle: '微笑餐厅 | 福冈米其林一星法餐',
+      ogDescription: '在福冈米其林一星的微笑餐厅，享受正统法式料理与九州时令风味。',
+      ogImageAlt: '福冈微笑餐厅外观',
+      twitterTitle: '微笑餐厅 | 福冈米其林一星法餐',
+      twitterDescription: '在福冈微笑餐厅，品味正统法式料理与九州时令食材。',
+      structuredData: {
+        name: '微笑餐厅',
+        alternateName: 'Restaurant Sourire',
+        description: '微笑餐厅是一家位于福冈的米其林一星法式餐厅，融合九州时令食材与正统法式技法。',
+        streetAddress: '日本福冈县福冈市中央区赤坂2-6-5-104 Park Heights Akasaka 1F-4',
+        addressLocality: '福冈市',
+        addressRegion: '福冈县',
+        addressCountry: '日本',
+        image: 'https://sourire-fukuoka.com/images/og/og-main.jpg',
+        url: 'https://sourire-fukuoka.com',
+        telephone: '+81-92-753-6324',
+        email: 'info@sourire-fukuoka.com',
+        latitude: '33.583971',
+        longitude: '130.392956',
+        openingHours: ['周二至周日 12:00-14:30', '周二至周日 18:00-20:30'],
+        servesCuisine: '法式料理',
+        priceRange: '¥¥¥¥',
+        acceptsReservations: true,
+        hasMenu: 'https://sourire-fukuoka.com#menu',
+        aggregateRating: {
+          ratingValue: '4.8',
+          reviewCount: '150',
+        },
+        award: '米其林一星',
+      },
+    },
   },
   ko: {
     common: {
@@ -367,7 +511,7 @@ export const translations: Record<Language, Translations> = {
     hero: {
       title: '레스토랑 수리르',
       subtitle: 'Restaurant Sourire',
-      taglineJa: 'あなたの心을 満たす、福岡けやき通りの一皿',
+      taglineJa: 'あなた의 마음을 채우는, 후쿠오카 케야키도리의 프랑스 음식',
       taglineEn: 'A Taste of French Elegance in the Heart of Fukuoka',
       cta: '예약하기',
     },
@@ -409,6 +553,7 @@ export const translations: Record<Language, Translations> = {
         dresscode: '스마트 캐주얼',
       },
       access: '니시테츠 후쿠오카(텐진)역에서 도보 5분',
+      addressDetail: '일본 후쿠오카현 후쿠오카시 주오구 아카사카 2-6-5-104 파크 하이츠 아카사카 1F-4, 810-0042',
     },
     news: {
       title: '공지사항',
@@ -432,6 +577,41 @@ export const translations: Record<Language, Translations> = {
       copyright: '© 2025 Restaurant Sourire. All rights reserved.',
       privacy: '개인정보처리방침',
       languages: '언어 선택',
+    },
+    seo: {
+      title: '레스토랑 수리르 | 후쿠오카 미슐랭 1스타 프렌치',
+      description: '레스토랑 수리르는 후쿠오카 케야키도리에 위치한 미슐랭 1스타 프렌치 레스토랑입니다. 규슈 제철 식재료와 정통 프렌치의 조화를 경험하세요.',
+      keywords: ['레스토랑 수리르', '프렌치', '후쿠오카', '미슐랭 1스타', '코스 요리', '예약'],
+      ogTitle: '레스토랑 수리르 | 후쿠오카 미슐랭 1스타 프렌치',
+      ogDescription: '후쿠오카 미슐랭 1스타 레스토랑 수리르에서 정통 프렌치와 규슈의 계절 맛을 경험하세요.',
+      ogImageAlt: '후쿠오카 레스토랑 수리르 외관',
+      twitterTitle: '레스토랑 수리르 | 후쿠오카 미슐랭 1스타 프렌치',
+      twitterDescription: '후쿠오카 수리르에서 정통 프렌치와 계절 식재료를 즐기세요.',
+      structuredData: {
+        name: '레스토랑 수리르',
+        alternateName: 'Restaurant Sourire',
+        description: '레스토랑 수리르는 후쿠오카에 위치한 미슐랭 1스타 프렌치 레스토랑으로, 규슈 제철 식재료와 정통 프렌치의 조화를 선사합니다.',
+        streetAddress: '일본 후쿠오카현 후쿠오카시 주오구 아카사카 2-6-5-104 파크 하이츠 아카사카 1F-4',
+        addressLocality: '후쿠오카시',
+        addressRegion: '후쿠오카현',
+        addressCountry: '일본',
+        image: 'https://sourire-fukuoka.com/images/og/og-main.jpg',
+        url: 'https://sourire-fukuoka.com',
+        telephone: '+81-92-753-6324',
+        email: 'info@sourire-fukuoka.com',
+        latitude: '33.583971',
+        longitude: '130.392956',
+        openingHours: ['화~일 12:00-14:30', '화~일 18:00-20:30'],
+        servesCuisine: '프랑스 요리',
+        priceRange: '₩₩₩₩',
+        acceptsReservations: true,
+        hasMenu: 'https://sourire-fukuoka.com#menu',
+        aggregateRating: {
+          ratingValue: '4.8',
+          reviewCount: '150',
+        },
+        award: '미슐랭 1스타',
+      },
     },
   },
 };
