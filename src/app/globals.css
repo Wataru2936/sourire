@@ -142,14 +142,14 @@ img {
 }
 
 /* モバイルファースト - レスポンシブヘルパー */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .section-spacing {
     padding-top: var(--spacing-section-mobile);
     padding-bottom: var(--spacing-section-mobile);
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
   .section-spacing {
     padding-top: var(--spacing-section);
     padding-bottom: var(--spacing-section);

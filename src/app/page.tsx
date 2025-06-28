@@ -31,7 +31,7 @@ export default function Home() {
       />
       
       {/* ヘッダー */}
-      <Header language={currentLanguage} />
+      <Header language={currentLanguage} onLanguageChange={handleLanguageChange} />
       
       {/* ヒーローセクション */}
       <HeroSection language={currentLanguage} />

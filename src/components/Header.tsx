@@ -7,18 +7,22 @@ import { getTranslation } from '@/lib/i18n'
 import Image from 'next/image'
 import LanguageSwitcher from './LanguageSwitcher'
 
-export default function Header({ language }: SectionProps) {
+interface HeaderProps extends SectionProps {
+  onLanguageChange: (language: any) => void;
+}
+
+export default function Header({ language, onLanguageChange }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const t = getTranslation(language)
 
   const navItems = [
     { href: '#hero', label: 'Home' },
-    { href: '#about', label: '私たちについて' },
-    { href: '#menu', label: 'お料理' },
-    { href: '#info', label: '店舗情報' },
-    { href: '#news', label: 'お知らせ' },
-    { href: '#instagram', label: 'Instagram' },
-    { href: '#contact', label: 'お問合せ' },
+    { href: '#about', label: t.common.about || '私たちについて' },
+    { href: '#menu', label: t.common.menu },
+    { href: '#info', label: t.common.info || '店舗情報' },
+    { href: '#news', label: t.common.news },
+    { href: '#instagram', label: t.common.instagram },
+    { href: '#contact', label: t.common.contact },
   ]
 
   return (
@@ -92,13 +96,13 @@ export default function Header({ language }: SectionProps) {
               </svg>
               <span className="text-cream-light">{t.common.reservation}</span>
             </motion.a>
-            <LanguageSwitcher currentLanguage={language} onLanguageChange={() => {}} />
+            <LanguageSwitcher currentLanguage={language} onLanguageChange={onLanguageChange} />
           </div>
 
           {/* モバイル：言語切替＆バーガーメニュー */}
           <div className="flex lg:hidden items-center w-full justify-between px-4">
             <div className="flex-1 flex justify-center">
-              <LanguageSwitcher currentLanguage={language} onLanguageChange={() => {}} />
+              <LanguageSwitcher currentLanguage={language} onLanguageChange={onLanguageChange} />
             </div>
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}

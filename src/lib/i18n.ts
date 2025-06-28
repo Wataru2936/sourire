@@ -16,6 +16,8 @@ export interface Translations {
     loading: string;
     error: string;
     backToTop: string;
+    about: string;
+    info: string;
   };
   hero: {
     title: string;
@@ -141,6 +143,8 @@ export const translations: Record<Language, Translations> = {
       loading: '読み込み中...',
       error: 'エラーが発生しました',
       backToTop: 'トップへ戻る',
+      about: 'シェフ&レストランについて',
+      info: '店舗情報',
     },
     hero: {
       title: 'レストラン スーリール',
@@ -263,6 +267,8 @@ export const translations: Record<Language, Translations> = {
       loading: 'Loading...',
       error: 'An error occurred',
       backToTop: 'Back to Top',
+      about: 'About Chef & Restaurant',
+      info: 'Restaurant Information',
     },
     hero: {
       title: 'Restaurant Sourire',
@@ -385,6 +391,8 @@ export const translations: Record<Language, Translations> = {
       loading: '加载中...',
       error: '发生错误',
       backToTop: '返回顶部',
+      about: '关于主厨与餐厅',
+      info: '餐厅信息',
     },
     hero: {
       title: '微笑餐厅',
@@ -507,6 +515,8 @@ export const translations: Record<Language, Translations> = {
       loading: '로딩 중...',
       error: '오류가 발생했습니다',
       backToTop: '맨 위로',
+      about: '셰프 & 레스토랑 소개',
+      info: '매장 정보',
     },
     hero: {
       title: '레스토랑 수리르',
