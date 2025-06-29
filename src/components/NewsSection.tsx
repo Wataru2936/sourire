@@ -1,13 +1,10 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import { SectionProps } from '@/types'
 import { useEffect, useState } from 'react'
 import Papa from 'papaparse'
 import type { Language } from '@/types'
 
 const SHEET_ID = '1ur63dFrriVpn71okabD3H3jOSKOV5DMHCse_NgR0v4E';
-const SHEET_RANGE = 'A2:F'; // 2行目以降、date, ja, en, zh, ko, fr
 
 function getSheetCSVUrl() {
   return `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=Sheet1`;
@@ -46,15 +43,6 @@ export default function NewsSection({ language }: { language: Language }) {
     }
     fetchNews();
   }, [language]);
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString)
-    return date.toLocaleDateString(language === 'ja' ? 'ja-JP' : 'en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    })
-  }
 
   return (
     <section id="news" className="section-spacing bg-cream-light">
