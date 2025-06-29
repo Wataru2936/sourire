@@ -11,11 +11,12 @@ export default function HeroSection({ language }: SectionProps) {
 
   // スライドショー用画像リスト
   const images = [
-    '/images/お肉料理2.webp',
-    '/images/魚料理4.webp',
-    '/images/デザート2.webp',
-    '/images/料理1.webp',
-    '/images/dinner-course.jpg',
+    '/images/lunch1.webp',
+    '/images/lunch2.webp',
+    '/images/dinner1.webp',
+    '/images/dinner2.webp',
+    '/images/dinner3.webp',
+    '/images/Desert1.webp',
   ];
   const [current, setCurrent] = useState(0);
   useEffect(() => {
@@ -119,7 +120,12 @@ export default function HeroSection({ language }: SectionProps) {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.9 }}
             >
-              {t.hero.tagline}
+              {t.hero.tagline.split('\n').map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i !== t.hero.tagline.split('\n').length - 1 && <br />}
+                </span>
+              ))}
             </motion.h2>
             <motion.p
               className="text-lg sm:text-xl text-gold-light font-elegant italic"
@@ -127,7 +133,12 @@ export default function HeroSection({ language }: SectionProps) {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1.2 }}
             >
-              {t.hero.taglineEn}
+              {t.hero.taglineEn.split('\n').map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i !== t.hero.taglineEn.split('\n').length - 1 && <br />}
+                </span>
+              ))}
             </motion.p>
           </motion.div>
 

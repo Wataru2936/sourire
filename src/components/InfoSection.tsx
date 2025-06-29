@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { SectionProps } from '@/types'
 import { getTranslation } from '@/lib/i18n'
-import { Phone, Mail, MapPin, CreditCard, Ban, Users } from 'lucide-react'
+import { Phone, Mail, MapPin, CreditCard, Ban, Users, Instagram } from 'lucide-react'
 
 export default function InfoSection({ language }: SectionProps) {
   const t = getTranslation(language)
@@ -22,10 +22,10 @@ export default function InfoSection({ language }: SectionProps) {
       href: `tel:${t.common.phoneNumber}`
     },
     {
-      icon: <Mail className="w-6 h-6" />,
-      label: t.common.email,
-      value: 'info@sourire-fukuoka.com',
-      href: 'mailto:info@sourire-fukuoka.com'
+      icon: <Instagram className="w-6 h-6" />,
+      label: 'Instagram',
+      value: '@restaurant_sourire',
+      href: 'https://www.instagram.com/restaurant_sourire/'
     }
   ]
 

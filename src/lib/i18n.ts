@@ -158,8 +158,8 @@ export const translations: Record<Language, Translations> = {
     hero: {
       title: 'レストラン\nスーリール',
       subtitle: 'Restaurant Sourire',
-      tagline: 'あなたの心を満たす、福岡けやき通りのフランス料理',
-      taglineEn: 'A Taste of French Elegance in the Heart of Fukuoka',
+      tagline: 'あなたの心を満たす\n福岡けやき通りのフランス料理',
+      taglineEn: 'A Taste of French Elegance\nin the Heart of Fukuoka',
       cta: 'ご予約はこちら',
     },
     about: {
@@ -314,8 +314,8 @@ export const translations: Record<Language, Translations> = {
     },
     menu: {
       title: 'Course Menu',
-      lunch: 'Lunch Course',
-      dinner: 'Dinner Course',
+      lunch: 'Lunch',
+      dinner: 'Dinner',
       course: 'Course',
       price: 'Price',
       yen: 'yen',

@@ -16,12 +16,6 @@ export default function Footer({ language }: SectionProps) {
       href: `tel:${t.common.phoneNumber}`
     },
     {
-      icon: <Mail className="w-5 h-5" />,
-      label: t.common.email,
-      value: 'info@sourire-fukuoka.com',
-      href: 'mailto:info@sourire-fukuoka.com'
-    },
-    {
       icon: <Instagram className="w-5 h-5" />,
       label: 'Instagram',
       value: '@restaurant_sourire',
