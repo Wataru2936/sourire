@@ -47,6 +47,6 @@ export default function Home() {
       
       {/* フッター */}
       <Footer language={currentLanguage} />
-    </main>
+      </main>
   )
 }

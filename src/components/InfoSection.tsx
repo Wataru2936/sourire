@@ -62,9 +62,6 @@ export default function InfoSection({ language }: SectionProps) {
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-wine font-serif mb-6">
             {t.info.title}
           </h2>
-          <p className="text-lg text-black/70 max-w-2xl mx-auto leading-relaxed">
-            {t.info.access}
-          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
@@ -184,7 +181,7 @@ export default function InfoSection({ language }: SectionProps) {
               <div className="relative h-80 bg-warm-gray flex items-center justify-center">
                 {/* 実際のGoogleマップはここに埋め込み */}
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.695021296157!2d130.3929563152107!3d33.58397084183827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35419135577ad10f%3A0x2a84c6b84e3fdfc4!2zUmVzdGF1cmFudCBTb3VyaXJl!5e0!3m2!1sja!2sjp!4v1719550000000!5m2!1sja!2sjp&markers=color:red%7Clabel:S%7C33.58397084183827,130.3929563152107"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.843694354878!2d130.38178527623472!3d33.58340737333715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354193d36a136b9b%3A0x89b876030cd0ac2!2zUmVzdGF1cmFudCBTb3VyaXJlICjjg6zjgrnjg4jjg6njg7Mg44K544O844Oq44O844OrKQ!5e0!3m2!1sja!2sjp!4v1751157001707!5m2!1sja!2sjp"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

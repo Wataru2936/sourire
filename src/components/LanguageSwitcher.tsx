@@ -37,11 +37,11 @@ export default function LanguageSwitcher({ currentLanguage, onLanguageChange }: 
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            initial={{ opacity: 0, y: 10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full mt-2 left-1/2 sm:left-auto -translate-x-1/2 sm:translate-x-0 right-auto sm:right-0 bg-cream/95 backdrop-blur-elegant rounded-lg shadow-elegant border border-wine/20 overflow-hidden min-w-[160px]"
+            className="absolute sm:top-full sm:mt-2 sm:bottom-auto sm:mb-0 bottom-full mb-2 left-1/2 sm:left-auto -translate-x-1/2 sm:translate-x-0 right-auto sm:right-0 bg-cream/95 backdrop-blur-elegant rounded-lg shadow-elegant border border-wine/20 overflow-hidden min-w-[160px]"
           >
             {languages.map((language) => (
               <motion.button

@@ -120,10 +120,10 @@ export default function Footer({ language }: SectionProps) {
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gold-light mt-1 flex-shrink-0" />
-                <div className="text-cream-light/80 text-sm leading-relaxed">
+                <a href="#info" className="text-cream-light/80 text-sm leading-relaxed underline hover:text-gold-light transition-colors duration-200 cursor-pointer">
                   {t.footer.address}<br/>
                   {language !== 'ja' && '1-2-3 Keyaki-dori, Chuo-ku, Fukuoka City'}
-                </div>
+                </a>
               </div>
               
               <div className="flex items-start gap-3">
