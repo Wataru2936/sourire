@@ -146,14 +146,14 @@ export default function NewsSection({ language }: SectionProps) {
                 </div>
 
                 <h3 className="text-xl font-bold text-wine font-serif mb-3 leading-tight group-hover:text-wine-dark transition-colors duration-300">
-                  {news.title[language]}
+                  {['ja','en','zh','ko'].includes(language) ? news.title[language as 'ja'|'en'|'zh'|'ko'] : news.title.ja}
                 </h3>
               </div>
 
               {/* ニュース内容 */}
               <div className="px-6 pb-6">
                 <p className="text-black/80 leading-relaxed line-clamp-3">
-                  {news.content[language]}
+                  {['ja','en','zh','ko'].includes(language) ? news.content[language as 'ja'|'en'|'zh'|'ko'] : news.content.ja}
                 </p>
                 
                 <motion.button
