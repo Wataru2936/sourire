@@ -13,7 +13,6 @@ import InfoSection from '@/components/InfoSection'
 import NewsSection from '@/components/NewsSection'
 import InstagramSection from '@/components/InstagramSection'
 import Footer from '@/components/Footer'
-import LanguageSwitcher from '@/components/LanguageSwitcher'
 
 export default function Home() {
   const [currentLanguage, setCurrentLanguage] = useState<Language>(DEFAULT_LANGUAGE)

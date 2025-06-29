@@ -2,13 +2,13 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { SectionProps } from '@/types'
+import { SectionProps, Language } from '@/types'
 import { getTranslation } from '@/lib/i18n'
 import Image from 'next/image'
 import LanguageSwitcher from './LanguageSwitcher'
 
 interface HeaderProps extends SectionProps {
-  onLanguageChange: (language: any) => void;
+  onLanguageChange: (language: Language) => void;
 }
 
 export default function Header({ language, onLanguageChange }: HeaderProps) {
