@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { SectionProps } from '@/types'
 import { getTranslation } from '@/lib/i18n'
-import { Phone, Mail, MapPin, CreditCard, Ban, Users, Instagram } from 'lucide-react'
+import { Phone, MapPin, CreditCard, Ban, Users, Instagram } from 'lucide-react'
 
 export default function InfoSection({ language }: SectionProps) {
   const t = getTranslation(language)

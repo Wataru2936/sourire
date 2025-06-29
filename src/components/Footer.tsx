@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { SectionProps } from '@/types'
 import { getTranslation } from '@/lib/i18n'
-import { Phone, Mail, MapPin, Clock, Instagram } from 'lucide-react'
+import { Phone, MapPin, Clock, Instagram } from 'lucide-react'
 
 export default function Footer({ language }: SectionProps) {
   const t = getTranslation(language)
