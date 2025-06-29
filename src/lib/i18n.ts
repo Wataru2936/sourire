@@ -230,7 +230,7 @@ export const translations: Record<Language, Translations> = {
       nearestStation: '最寄り駅：西鉄バス 赤坂３丁目、福岡市営地下鉄赤坂駅',
       directions: '道順',
       other: 'その他',
-      restaurantInfo: '全15席の小さなレストランで、カウンター席を5席ご用意しております。お一人様でのご来店も心より歓迎いたします。',
+      restaurantInfo: '当店は全15席の小さなレストランで、\nカウンター席を5席ご用意しております。\nお一人様でのご来店も、心よりお待ちしております。\n\nお料理に合わせたグラスワインのペアリングもご用意しており、\nボトルワインも各種取り揃えております。\nお好みに合わせてお楽しみください。\n\nなお、ドリンクをご注文いただかない場合は、\nチャージ料として350円を頂戴しております。\nあらかじめご了承ください。',
       notes: '《ご利用にあたってのご案内》',
       reservationNotes: '食材の無駄を防ぎ、より良いお料理を提供させていただくため、ご予約は前日までにお願い申し上げます。',
       cancellationPolicy: 'ご予約当日のキャンセルにつきましては、予定されていたお料理代金をキャンセル料として申し受ける場合がございます。あらかじめご了承ください。',
@@ -364,7 +364,7 @@ export const translations: Record<Language, Translations> = {
       nearestStation: 'Nearest stops: Nishitetsu Bus Akasaka 3-chome / Fukuoka Subway Akasaka Station',
       directions: 'Directions',
       other: 'Other',
-      restaurantInfo: 'A small, intimate restaurant with 15 seats, including 5 counter seats. Solo diners are warmly welcomed.',
+      restaurantInfo: 'Our restaurant is an intimate space with only 15 seats,\nincluding 5 counter seats.\nWe warmly welcome solo diners as well.\n\nWe offer wine pairings by the glass to complement your meal,\nas well as a wide selection of bottled wines.\nPlease enjoy according to your preference.\n\nPlease note that a cover charge of ¥350 will apply\nif no drinks are ordered.',
       notes: '■ Please Read Before Visiting ■',
       reservationNotes: 'To reduce food waste and provide the best experience possible, please make your reservation at least one day in advance.',
       cancellationPolicy: 'Cancellations on the day of the reservation may incur a charge equivalent to the cost of the reserved course. Thank you for your understanding.',
@@ -500,7 +500,7 @@ export const translations: Record<Language, Translations> = {
       directions: '路线指引',
       other: '其他信息',
       restaurantInfo:
-        '本店为小型精致餐厅，共15个座位，其中包括5个吧台座位。我们也非常欢迎单人用餐的客人。',
+        '本店为一家温馨的小型餐厅，\n共设有15个座位，其中包含5个吧台座。\n我们也热情欢迎单人用餐的客人。\n\n我们提供与菜品搭配的杯装葡萄酒套餐，\n并备有丰富的瓶装葡萄酒供您选择。\n请根据喜好自由享用。\n\n若您未点任何饮品，\n我们将收取350日元的服务费，敬请谅解。',
       notes: '■ 用餐须知 ■',
       reservationNotes: '为避免食材浪费并提供最优质的料理，敬请于前一天完成预约。',
       cancellationPolicy:
@@ -637,7 +637,7 @@ export const translations: Record<Language, Translations> = {
       directions: '찾아오시는 길',
       other: '기타 정보',
       restaurantInfo:
-        '본 매장은 총 15석의 아담한 레스토랑으로, 카운터 좌석 5석을 포함하고 있습니다. 혼자 오시는 손님도 환영합니다.',
+        '저희 레스토랑은 총 15석의 아담한 공간으로,\n이 중 5석은 카운터 좌석입니다.\n혼자 방문하시는 분도 진심으로 환영합니다.\n\n요리에 어울리는 글라스 와인 페어링을 제공하며,\n다양한 병 와인도 준비되어 있습니다.\n기호에 맞게 즐겨주시기 바랍니다.\n\n음료를 주문하지 않으실 경우,\n테이블 차지로 350엔이 청구되오니 양해 부탁드립니다.',
       notes: '■ 이용 시 안내사항 ■',
       reservationNotes:
         '식재료 낭비를 줄이고 최고의 요리를 제공해 드리기 위해, 예약은 하루 전까지 부탁드립니다.',
@@ -773,7 +773,7 @@ export const translations: Record<Language, Translations> = {
       nearestStation: 'Arrêts les plus proches : Bus Nishitetsu Akasaka 3-chome / Métro Akasaka',
       directions: 'Comment venir',
       other: 'Autres informations',
-      restaurantInfo: 'Un petit restaurant intime avec 15 places, dont 5 au comptoir. Les clients seuls sont également les bienvenus.',
+      restaurantInfo: 'Notre restaurant est un petit établissement intime de 15 places,\ndont 5 au comptoir.\nNous accueillons chaleureusement les clients seuls.\n\nNous proposons des accords mets et vins au verre\npour accompagner vos plats,\nainsi qu’un large choix de vins en bouteille.\nProfitez selon vos préférences.\n\nVeuillez noter qu’un supplément de 350 ¥ sera appliqué\nsi aucune boisson n’est commandée.',
       notes: '■ Informations importantes avant votre visite ■',
       reservationNotes: 'Afin d’éviter tout gaspillage alimentaire et de garantir une qualité optimale, les réservations doivent être faites au plus tard la veille.',
       cancellationPolicy: 'En cas d’annulation le jour même, des frais équivalents au montant du menu réservé pourront être facturés. Merci de votre compréhension.',

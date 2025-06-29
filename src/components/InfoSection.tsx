@@ -230,7 +230,11 @@ export default function InfoSection({ language }: SectionProps) {
             >
               <h4 className="text-xl font-bold text-wine font-serif mb-4">{t.info.other}</h4>
               <div className="space-y-2 text-black/80 text-sm">
-                <div>{t.info.restaurantInfo}</div>
+                <div>
+                  {t.info.restaurantInfo.split('\n').map((line, i) => (
+                    <span key={i}>{line}<br /></span>
+                  ))}
+                </div>
                 <div className="font-bold mt-2">{t.info.notes}</div>
                 <ul className="list-disc pl-6">
                   <li>{t.info.reservationNotes}</li>
