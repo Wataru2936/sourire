@@ -24,12 +24,6 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-cream-light to-cream">
-      {/* 言語切り替えボタン */}
-      <LanguageSwitcher 
-        currentLanguage={currentLanguage}
-        onLanguageChange={handleLanguageChange}
-      />
-      
       {/* ヘッダー */}
       <Header language={currentLanguage} onLanguageChange={handleLanguageChange} />
       

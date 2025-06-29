@@ -77,8 +77,13 @@ export default function HeroSection({ language }: SectionProps) {
               </motion.div>
             </div>
             
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-cream-light font-serif mb-2">
-              {t.hero.title}
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-cream-light font-serif mb-2 whitespace-pre-line">
+              {t.hero.title.split('\n').map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i !== t.hero.title.split('\n').length - 1 && <br />}
+                </span>
+              ))}
             </h1>
             <p className="text-xl sm:text-2xl lg:text-3xl text-gold font-elegant tracking-widest">
               {t.hero.subtitle}
@@ -114,7 +119,7 @@ export default function HeroSection({ language }: SectionProps) {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.9 }}
             >
-              {t.hero.taglineJa}
+              {t.hero.tagline}
             </motion.h2>
             <motion.p
               className="text-lg sm:text-xl text-gold-light font-elegant italic"

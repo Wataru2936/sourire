@@ -12,8 +12,8 @@ export default function Footer({ language }: SectionProps) {
     {
       icon: <Phone className="w-5 h-5" />,
       label: t.common.phone,
-      value: '092-753-6324',
-      href: 'tel:092-753-6324'
+      value: t.common.phoneNumber,
+      href: `tel:${t.common.phoneNumber}`
     },
     {
       icon: <Mail className="w-5 h-5" />,
@@ -30,13 +30,13 @@ export default function Footer({ language }: SectionProps) {
   ]
 
   const quickLinks = [
-    { href: '#hero', label: 'Home' },
-    { href: '#about', label: '私たちについて' },
-    { href: '#menu', label: 'お料理' },
-    { href: '#info', label: '店舗情報' },
-    { href: '#news', label: 'お知らせ' },
-    { href: '#instagram', label: 'Instagram' },
-    { href: '#contact', label: 'お問合せ' },
+    { href: '#hero', label: t.common.home || 'Home' },
+    { href: '#about', label: t.common.about },
+    { href: '#menu', label: t.common.menu },
+    { href: '#info', label: t.common.info },
+    { href: '#news', label: t.common.news },
+    { href: '#instagram', label: t.common.instagram },
+    { href: '#contact', label: t.common.contact },
   ]
 
   return (
@@ -71,7 +71,7 @@ export default function Footer({ language }: SectionProps) {
 
             {/* 予約CTAボタン */}
             <motion.a
-              href="tel:092-753-6324"
+              href={`tel:${t.common.phoneNumber}`}
               className="inline-flex items-center gap-3 bg-wine hover:bg-wine-dark text-cream-light px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}

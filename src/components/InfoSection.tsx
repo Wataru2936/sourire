@@ -18,8 +18,8 @@ export default function InfoSection({ language }: SectionProps) {
     {
       icon: <Phone className="w-6 h-6" />,
       label: t.common.phone,
-      value: '092-753-6324',
-      href: 'tel:092-753-6324'
+      value: t.common.phoneNumber,
+      href: `tel:${t.common.phoneNumber}`
     },
     {
       icon: <Mail className="w-6 h-6" />,
@@ -122,13 +122,16 @@ export default function InfoSection({ language }: SectionProps) {
             >
               <h4 className="text-xl font-bold text-wine font-serif mb-4">{t.info.operatingHours}</h4>
               <div className="space-y-3">
-                <div className="flex justify-between items-center">
-                  <span className="font-medium">{t.info.lunchOperating}</span>
-                  <span className="text-black/70">12:00-14:30（金・土・日・祝祭日のみ）</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="font-medium">{t.info.dinnerOperating}</span>
-                  <span className="text-black/70">18:00-20:30（月・火・木・金・土・日）</span>
+                <div className="space-y-2">
+                  <div>
+                    <span className="font-medium inline-block min-w-[4.5em]">{t.info.lunchOperating}</span>
+                    <span className="text-black/70">{t.info.lunchHours}</span>
+                    <span className="text-black/60 text-xs ml-2">{t.info.lunchNote}</span>
+                  </div>
+                  <div>
+                    <span className="font-medium inline-block min-w-[4.5em]">{t.info.dinnerOperating}</span>
+                    <span className="text-black/70">{t.info.dinnerHours}</span>
+                  </div>
                 </div>
                 <div className="pt-2 border-t border-wine/20">
                   <span className="font-medium text-wine">{t.info.wednesdayClosed}</span>
@@ -213,10 +216,9 @@ export default function InfoSection({ language }: SectionProps) {
                 <div>{t.info.nearestStation}</div>
                 <div>
                   {t.info.directions}：<br />
-                  ・西鉄バス赤坂3丁目バス停至近<br />
-                  ・博多バスターミナル(4乗場)<br />
-                  ・駅前A発(国体道路経由113.203.201.114.12.1136.201)約20分<br />
-                  ・福岡市営地下鉄赤坂駅から徒歩15分
+                  {t.info.accessDetail.split('\n').map((line, i) => (
+                    <span key={i}>{line}<br /></span>
+                  ))}
                 </div>
               </div>
             </motion.div>

@@ -177,7 +177,7 @@ export default function MenuSection({ language }: SectionProps) {
 
         {/* 注記 */}
         <motion.div
-          className="text-center mt-12"
+          className="text-center mt-12 space-y-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}

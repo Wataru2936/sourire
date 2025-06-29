@@ -1,6 +1,6 @@
 // レストラン・スーリールの型定義
 
-export type Language = 'ja' | 'en' | 'zh' | 'ko';
+export type Language = 'ja' | 'en' | 'zh' | 'ko' | 'fr';
 
 export interface MenuCourse {
   id: string;

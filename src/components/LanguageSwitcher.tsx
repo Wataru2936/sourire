@@ -9,7 +9,7 @@ import { Globe } from 'lucide-react'
 export default function LanguageSwitcher({ currentLanguage, onLanguageChange }: LanguageSwitcherProps) {
   const [isOpen, setIsOpen] = useState(false)
 
-  const languages: Language[] = ['ja', 'en', 'zh', 'ko']
+  const languages: Language[] = ['ja', 'en', 'zh', 'ko', 'fr']
 
   return (
     <div className="relative z-50">

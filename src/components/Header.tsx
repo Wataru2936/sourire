@@ -85,18 +85,18 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
 
           {/* 予約＆多言語ボタンを中央揃えで横並び */}
           <div className="hidden lg:flex items-center gap-6">
-            <motion.a
-              href="#contact"
-              className="flex items-center gap-2 bg-wine hover:bg-wine-dark text-cream-light px-6 py-3 rounded-full font-medium transition-all duration-300 shadow-elegant hover:shadow-xl"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+
+            <LanguageSwitcher currentLanguage={language} onLanguageChange={onLanguageChange} />
+            {/* 電話アイコンボタン */}
+            <a
+              href={`tel:${t.common.phoneNumber}`}
+              className="flex items-center justify-center bg-wine/90 hover:bg-wine-dark text-cream-light w-12 h-12 rounded-full shadow-elegant transition-all duration-300"
+              aria-label={t.common.phone}
             >
-              <svg className="w-5 h-5 text-cream-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-cream-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              <span className="text-cream-light">{t.common.reservation}</span>
-            </motion.a>
-            <LanguageSwitcher currentLanguage={language} onLanguageChange={onLanguageChange} />
+            </a>
           </div>
 
           {/* モバイル：言語切替＆バーガーメニュー */}
