@@ -95,7 +95,9 @@ export default function NewsSection({ language }: SectionProps) {
           {news.map((item, idx) => (
             <div key={item.date + idx} className="bg-cream rounded-lg p-6 shadow-elegant">
               <div className="text-sm text-black/60 mb-2">{item.date}</div>
-              <div className="text-lg text-black font-bold mb-1">{item[language] || item.ja}</div>
+              <div className="text-lg text-black font-bold mb-1 whitespace-pre-line">
+                {(item[language] || item.ja)}
+              </div>
             </div>
           ))}
         </div>
