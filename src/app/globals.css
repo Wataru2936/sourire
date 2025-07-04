@@ -49,10 +49,10 @@
   --transition-smooth: all 0.3s ease-in-out;
 }
 
-/* ベーススタイル */
+/* ベーススタイル - クリティカル */
 * {
   box-sizing: border-box;
-  }
+}
 
 html, body {
   max-width: 100vw;
@@ -75,7 +75,56 @@ main, section {
   overflow-x: hidden;
 }
 
-/* エレガントなスクロールバー */
+/* ヘッダータイポグラフィ - クリティカル */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* フォーカス状態 - アクセシビリティ */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ボタンベーススタイル */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* リンクベーススタイル */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 画像レスポンシブ */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* カスタムユーティリティ - 遅延読み込み */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow-elegant {
+  box-shadow: 0 20px 60px rgba(139, 0, 0, 0.1), 0 8px 25px rgba(139, 0, 0, 0.08);
+}
+
+.backdrop-blur-elegant {
+  backdrop-filter: blur(10px) saturate(180%);
+}
+
+/* エレガントなスクロールバー - 遅延読み込み */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -93,72 +142,54 @@ main, section {
   background: var(--wine-red-dark);
 }
 
-/* セレクション */
+/* セレクション - 遅延読み込み */
 ::selection {
   background: var(--wine-red);
   color: var(--cream-light);
 }
 
-/* ヘッダータイポグラフィ */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-serif);
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-/* フォーカス状態 */
-:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 2px;
-}
-
-/* ボタンベーススタイル */
-button {
-  font-family: inherit;
-  cursor: pointer;
-  transition: var(--transition-smooth);
-}
-
-/* リンクベーススタイル */
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: var(--transition-smooth);
-}
-
-/* 画像レスポンシブ */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* カスタムユーティリティ */
-.text-gradient-gold {
-  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.shadow-elegant {
-  box-shadow: 0 20px 60px rgba(139, 0, 0, 0.1), 0 8px 25px rgba(139, 0, 0, 0.08);
-}
-
-.backdrop-blur-elegant {
-  backdrop-filter: blur(10px) saturate(180%);
-}
-
 /* モバイルファースト - レスポンシブヘルパー */
 @media (max-width: 1024px) {
   .section-spacing {
-    padding-top: var(--spacing-section-mobile);
-    padding-bottom: var(--spacing-section-mobile);
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 }
 
 @media (min-width: 1025px) {
   .section-spacing {
-    padding-top: var(--spacing-section);
-    padding-bottom: var(--spacing-section);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* パフォーマンス最適化 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* プリントスタイル */
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
   }
 }

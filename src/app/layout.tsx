@@ -2,23 +2,32 @@ import type { Metadata } from "next";
 import { Noto_Serif_JP, Playfair_Display, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
-// Google Fontsの設定
+// Google Fontsの最適化設定
 const notoSerifJP = Noto_Serif_JP({
   subsets: ["latin"],
   variable: "--font-serif-jp",
   weight: ["200", "300", "400", "500", "600", "700"],
+  display: "swap", // フォントスワップを有効化
+  preload: true,
+  fallback: ["serif"],
 });
 
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-serif",
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+  preload: true,
+  fallback: ["serif"],
 });
 
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-elegant",
   weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  preload: true,
+  fallback: ["serif"],
 });
 
 export const metadata: Metadata = {
@@ -115,6 +124,14 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
         <meta name="description" content="福岡市・けやき通りにあるミシュラン一つ星フレンチレストラン「スーリール」。フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。" />
         
+        {/* プリロード - クリティカルリソース */}
+        <link rel="preload" href="/images/Sourire_logo.png" as="image" type="image/png" />
+        <link rel="preload" href="/images/lunch1.webp" as="image" type="image/webp" />
+        
+        {/* DNSプリフェッチ - 外部リソース */}
+        <link rel="dns-prefetch" href="//www.google.com" />
+        <link rel="dns-prefetch" href="//www.instagram.com" />
+        
         {/* 構造化データ（JSON-LD） */}
         <script
           type="application/ld+json"
@@ -158,6 +175,45 @@ export default function RootLayout({
             })
           }}
         />
+        
+        {/* クリティカルCSS - インライン化 */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            /* クリティカルCSS - ファーストペイント用 */
+            body {
+              background: linear-gradient(135deg, #FFFEF7 0%, #FFF8E7 100%);
+              color: #1A1A1A;
+              font-family: 'Noto Serif JP', serif;
+              line-height: 1.7;
+              font-weight: 400;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+              max-width: 100vw;
+              overflow-x: hidden;
+            }
+            
+            html, body {
+              max-width: 100vw;
+              overflow-x: hidden;
+              scroll-behavior: smooth;
+            }
+            
+            main, section {
+              max-width: 100vw;
+              overflow-x: hidden;
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+              font-family: 'Playfair Display', 'Noto Serif JP', serif;
+              font-weight: 600;
+              line-height: 1.3;
+            }
+            
+            * {
+              box-sizing: border-box;
+            }
+          `
+        }} />
       </head>
       <body className={`min-h-screen bg-gradient-to-br from-cream-light to-cream font-serif-jp ${notoSerifJP.variable} ${playfairDisplay.variable} ${cormorantGaramond.variable}`}>
         <div id="top" />

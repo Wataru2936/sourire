@@ -4,9 +4,32 @@ import { motion } from 'framer-motion'
 import { SectionProps } from '@/types'
 import { getTranslation } from '@/lib/i18n'
 import { Phone, MapPin, CreditCard, Ban, Users, Instagram } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 export default function InfoSection({ language }: SectionProps) {
   const t = getTranslation(language)
+  const [mapLoaded, setMapLoaded] = useState(false)
+  const [mapVisible, setMapVisible] = useState(false)
+
+  // 地図の遅延読み込み
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setMapVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    const mapElement = document.getElementById('google-map-container')
+    if (mapElement) {
+      observer.observe(mapElement)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   const infoItems = [
     {
@@ -95,8 +118,9 @@ export default function InfoSection({ language }: SectionProps) {
                         <a 
                           href={item.href}
                           className="text-wine hover:underline transition-colors duration-300"
+                          aria-label={`${item.label}: ${item.value}`}
                         >
-                          お電話でのご予約・お問い合わせ: {item.value}
+                          {item.value}
                         </a>
                       ) : (
                         <div className="text-black/70">
@@ -173,31 +197,41 @@ export default function InfoSection({ language }: SectionProps) {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {/* Googleマップ */}
+            {/* Googleマップ - 遅延読み込み最適化 */}
             <div className="bg-cream rounded-lg overflow-hidden shadow-elegant">
               <div className="p-4 bg-wine text-cream-light">
                 <h4 className="text-lg font-bold">{t.info.accessMap}</h4>
               </div>
-              <div className="relative h-80 bg-warm-gray flex items-center justify-center">
-                {/* 実際のGoogleマップはここに埋め込み */}
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.843694354878!2d130.38178527623472!3d33.58340737333715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354193d36a136b9b%3A0x89b876030cd0ac2!2zUmVzdGF1cmFudCBTb3VyaXJlICjjg6zjgrnjg4jjg6njg7Mg44K544O844Oq44O844OrKQ!5e0!3m2!1sja!2sjp!4v1751157001707!5m2!1sja!2sjp"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="absolute inset-0"
-                  title="Google Mapで店舗位置を表示"
-                />
-                <div className="bg-wine/90 text-cream-light p-4 rounded-lg shadow-lg">
-                  <div className="text-center">
-                    <MapPin className="w-8 h-8 mx-auto mb-2" />
-                    <div className="font-bold">Google Map</div>
-                    <div className="text-sm opacity-90">{t.info.showMap}</div>
+              <div 
+                id="google-map-container"
+                className="relative h-80 bg-warm-gray flex items-center justify-center"
+              >
+                {/* 遅延読み込みされたGoogleマップ */}
+                {mapVisible && (
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.843694354878!2d130.38178527623472!3d33.58340737333715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354193d36a136b9b%3A0x89b876030cd0ac2!2zUmVzdGF1cmFudCBTb3VyaXJlICjjg6zjgrnjg4jjg6njg7Mg44K544O844Oq44O844OrKQ!5e0!3m2!1sja!2sjp!4v1751157001707!5m2!1sja!2sjp"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="absolute inset-0"
+                    title="Google Mapで店舗位置を表示"
+                    onLoad={() => setMapLoaded(true)}
+                  />
+                )}
+                
+                {/* ローディング状態 */}
+                {!mapLoaded && (
+                  <div className="bg-wine/90 text-cream-light p-4 rounded-lg shadow-lg">
+                    <div className="text-center">
+                      <MapPin className="w-8 h-8 mx-auto mb-2" />
+                      <div className="font-bold">Google Map</div>
+                      <div className="text-sm opacity-90">{t.info.showMap}</div>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </div>
 
