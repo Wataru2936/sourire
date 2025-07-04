@@ -1,7 +1,7 @@
 {
   "name": "レストラン スーリール | Restaurant Sourire",
   "short_name": "Sourire",
-  "description": "福岡・けやき通りのミシュラン一つ星フレンチレストラン",
+  "description": "福岡けやき通りのフレンチレストラン",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#FFFEF7",
