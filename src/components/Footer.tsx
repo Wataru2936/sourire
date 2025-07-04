@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { SectionProps } from '@/types'
 import { getTranslation } from '@/lib/i18n'
 import { Phone, MapPin, Clock, Instagram } from 'lucide-react'
+import Image from 'next/image'
 
 export default function Footer({ language }: SectionProps) {
   const t = getTranslation(language)
@@ -50,7 +51,7 @@ export default function Footer({ language }: SectionProps) {
                 レストラン スーリール
               </p>
               <div className="flex items-center gap-2 mb-6">
-                <img src="/images/ミシュラン星のみ.png" alt="ミシュラン星のみ" className="w-8 h-8 object-contain rounded-full shadow-lg bg-white" />
+                <Image src="/images/ミシュラン星のみ.png" alt="ミシュラン星のみ" className="w-8 h-8 object-contain rounded-full shadow-lg bg-white" width={32} height={32} />
                 <span className="text-lg font-medium">{t.about.michelin}</span>
               </div>
             </div>
@@ -73,7 +74,7 @@ export default function Footer({ language }: SectionProps) {
           <motion.div>
             <h4 className="text-xl font-bold font-serif mb-6 text-gold-light">Menu</h4>
             <nav className="space-y-3">
-              {quickLinks.map((link, index) => (
+              {quickLinks.map((link) => (
                 <motion.a
                   key={link.href}
                   href={link.href}
@@ -111,7 +112,7 @@ export default function Footer({ language }: SectionProps) {
 
             {/* 連絡先リンク */}
             <div className="space-y-3">
-              {contactLinks.map((contact, index) => (
+              {contactLinks.map((contact) => (
                 <motion.a
                   key={contact.href}
                   href={contact.href}

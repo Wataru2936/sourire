@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { SectionProps } from '@/types'
 import { getTranslation } from '@/lib/i18n'
+import Image from 'next/image'
 
 export default function AboutSection({ language }: SectionProps) {
   const t = getTranslation(language)
@@ -41,7 +42,13 @@ export default function AboutSection({ language }: SectionProps) {
                 }}
                 className="text-2xl"
               >
-                <img src="/images/ミシュラン星のみ.png" alt="ミシュラン星のみ" className="w-8 h-8 object-contain inline-block rounded-full shadow bg-white" />
+                <Image 
+                  src="/images/ミシュラン星のみ.png" 
+                  alt="ミシュラン星のみ" 
+                  width={32}
+                  height={32}
+                  className="w-8 h-8 object-contain inline-block rounded-full shadow bg-white"
+                />
               </motion.div>
             </motion.div>
           </motion.div>
@@ -61,7 +68,13 @@ export default function AboutSection({ language }: SectionProps) {
               <motion.div
                 className="flex items-center gap-3 mb-6"
               >
-                <img src="/images/ミシュラン星のみ.png" alt="ミシュラン星のみ" className="w-8 h-8 object-contain inline-block rounded-full shadow bg-white" />
+                <Image 
+                  src="/images/ミシュラン星のみ.png" 
+                  alt="ミシュラン星のみ" 
+                  width={32}
+                  height={32}
+                  className="w-8 h-8 object-contain inline-block rounded-full shadow bg-white"
+                />
                 <span className="text-xl font-bold text-gold-dark">{t.about.michelin}</span>
               </motion.div>
             </div>

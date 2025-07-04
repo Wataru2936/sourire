@@ -5,6 +5,7 @@ import { SectionProps } from '@/types'
 import { getTranslation } from '@/lib/i18n'
 import { Phone, MapPin, CreditCard, Ban, Users, Instagram } from 'lucide-react'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function InfoSection({ language }: SectionProps) {
   const t = getTranslation(language)
@@ -54,7 +55,7 @@ export default function InfoSection({ language }: SectionProps) {
 
   const features = [
     {
-      icon: <img src="/images/ミシュラン星のみ.png" alt="ミシュラン星のみ" className="w-6 h-6 object-contain inline-block rounded-full shadow bg-white" />,
+      icon: <Image src="/images/ミシュラン星のみ.png" alt="ミシュラン星のみ" width={24} height={24} className="w-6 h-6 object-contain inline-block rounded-full shadow bg-white" />,
       label: t.info.features.michelin
     },
     {

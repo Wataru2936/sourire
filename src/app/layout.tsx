@@ -126,7 +126,7 @@ export default function RootLayout({
         
         {/* プリロード - クリティカルリソース */}
         <link rel="preload" href="/images/Sourire_logo.png" as="image" type="image/png" />
-        <link rel="preload" href="/images/lunch1.webp" as="image" type="image/webp" />
+        <link rel="preload" href="/images/lunch1.jpg" as="image" type="image/webp" />
         
         {/* DNSプリフェッチ - 外部リソース */}
         <link rel="dns-prefetch" href="//www.google.com" />

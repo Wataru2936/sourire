@@ -11,12 +11,12 @@ export default function HeroSection({ language }: SectionProps) {
 
   // スライドショー用画像リスト - WebP形式を優先
   const images = useMemo(() => [
-    '/images/lunch1.webp',
-    '/images/lunch2.webp',
-    '/images/dinner1.webp',
-    '/images/dinner2.webp',
-    '/images/dinner3.webp',
-    '/images/Desert1.webp',
+    '/images/lunch1.jpg',
+    '/images/lunch2.jpg',
+    '/images/dinner1.jpg',
+    '/images/dinner2.jpg',
+    '/images/dinner3.jpg',
+    '/images/Desert1.jpg',
   ], []);
   
   const [current, setCurrent] = useState(0);

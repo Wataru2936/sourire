@@ -25,7 +25,7 @@ const menuData = {
         ko: '셰프가 제철 재료로 구성한 정갈한 런치 오마카세 코스입니다.',
         fr: 'Un menu déjeuner élaboré par le chef à partir des meilleurs produits de saison.'
       },
-      image: '/images/lunch1.webp'
+      image: '/images/lunch1.jpg'
     },
     {
       id: 'lunch-2',
@@ -44,7 +44,7 @@ const menuData = {
         ko: '규슈 흑모와규와 제철 식재료를 고급스럽게 구성한 프리미엄 런치 코스입니다.',
         fr: 'Un déjeuner raffiné mettant à l’honneur le bœuf Wagyu de Kyushu et des produits de saison.'
       },
-      image: '/images/lunch2.webp'
+      image: '/images/lunch2.jpg'
     }
   ],
   dinner: [
@@ -65,7 +65,7 @@ const menuData = {
         ko: '셰프가 엄선한 제철 식재료로 구성된 풀코스 디너 오마카세입니다.',
         fr: 'Un dîner gastronomique complet préparé par le chef à partir d’ingrédients de saison soigneusement sélectionnés.'
       },
-      image: '/images/dinner1.webp'
+      image: '/images/dinner1.jpg'
     },
     {
       id: 'dinner-2',
@@ -84,7 +84,7 @@ const menuData = {
         ko: '규슈 흑모와규를 중심으로 셰프가 정성껏 구성한 스페셜 디너 코스입니다.',
         fr: 'Un menu spécial du chef mettant à l’honneur le bœuf Wagyu de Kyushu et des produits de saison.'
       },
-      image: '/images/dinner2.webp'
+      image: '/images/dinner2.jpg'
     },
     {
       id: 'dinner-3',
@@ -103,7 +103,7 @@ const menuData = {
         ko: '고객님의 취향과 요청에 맞춰 요리와 식재료를 자유롭게 구성할 수 있는 맞춤형 디너 코스입니다. 가격은 구성에 따라 변동됩니다.',
         fr: 'Un menu du soir entièrement personnalisable selon vos envies et ingrédients. Le tarif varie en fonction de votre sélection (prix du marché).'
       },
-      image: '/images/dinner3.webp'
+      image: '/images/dinner3.jpg'
     }
   ]
 };
