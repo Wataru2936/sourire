@@ -121,7 +121,13 @@ export default function RootLayout({
         <meta name="theme-color" content="#8B0000" />
         <meta name="msapplication-TileColor" content="#8B0000" />
         <meta name="robots" content="index, follow" />
-        <meta name="description" content="福岡市・けやき通りにあるミシュラン一つ星フレンチレストラン「スーリール」。フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。" />
+        <meta name="description" content="福岡市けやき通りにあるフレンチレストラン「スーリール」。フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.sourire.win/" />
+        <meta property="og:title" content="レストラン スーリール - 福岡けやき通りのフレンチ" />
+        <meta property="og:description" content="ミシュラン一つ星フレンチレストラン" />
+        <meta property="og:image" content="https://www.sourire.win/images/OGP.png" />
+        <meta name="twitter:card" content="summary_large_image" />
         
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCJBNGH5FX"></script>
@@ -229,7 +235,7 @@ export default function RootLayout({
         
         {/* OGP/サムネイル */}
         <meta property="og:image" content="https://www.sourire.win/images/OGP.png" />
-        <meta name="thumbnail" content="https://www.sourire.win/images/Google.png" />
+        <meta name="thumbnail" content="https://www.sourire.win/images/Google.jpg" />
       </head>
       <body className={`min-h-screen bg-gradient-to-br from-cream-light to-cream font-serif-jp ${notoSerifJP.variable} ${playfairDisplay.variable} ${cormorantGaramond.variable}`}>
         <div id="top" />
