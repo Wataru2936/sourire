@@ -51,13 +51,13 @@ export default function HeroSection({ language }: SectionProps) {
     
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 4000); // 4秒間隔
+    }, 2500); // 2.5秒間隔
     
     return () => clearInterval(interval);
   }, [images.length, imagesLoaded]);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* 背景画像とオーバーレイ（スライドショー） */}
       <div className="absolute inset-0 z-0">
         {images.map((img, idx) => (
