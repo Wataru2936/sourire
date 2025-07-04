@@ -71,11 +71,7 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
           <motion.a
             href="#home"
             onClick={scrollToHome}
-<<<<<<< HEAD
-            className="flex items-center lg:static fixed left-4 bottom-2 z-50 cursor-pointer"
-=======
             className="hidden lg:flex items-center lg:static relative z-50 mb-2 lg:mb-0 lg:mr-8"
->>>>>>> vercel-test-rollback
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
