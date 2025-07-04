@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { SectionProps, Language } from '@/types'
 import { getTranslation } from '@/lib/i18n'
@@ -13,7 +13,6 @@ interface HeaderProps extends SectionProps {
 
 export default function Header({ language, onLanguageChange }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const menuRef = useRef<HTMLDivElement>(null)
   const t = getTranslation(language)
 
   const navItems = [
@@ -26,31 +25,6 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
     { href: '#contact', label: t.common.contact },
   ]
 
-  // バーガーメニューの外側クリックで閉じる
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false)
-      }
-    }
-
-    if (isMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside)
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [isMenuOpen])
-
-  // ホームにスクロールする関数
-  const scrollToHome = () => {
-    const homeElement = document.getElementById('home')
-    if (homeElement) {
-      homeElement.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
   return (
     <motion.header
       className="fixed w-full z-40 bg-cream/95 backdrop-blur-elegant shadow-elegant lg:top-0 lg:left-0 top-auto bottom-0 left-0 lg:bottom-auto"
@@ -59,12 +33,11 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-2 lg:py-6">
+        <div className="flex flex-col lg:flex-row lg:justify-center items-center py-2 lg:py-6">
           {/* ロゴ */}
           <motion.a
             href="#home"
-            onClick={scrollToHome}
-            className="flex items-center lg:hidden fixed left-4 bottom-2 z-50 cursor-pointer"
+            className="flex items-center lg:static relative z-50 mb-2 lg:mb-0 lg:mr-8"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -79,7 +52,6 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
                   priority
                 />
               </div>
-              
               {/* ロゴテキスト */}
               <div className="hidden sm:block">
                 <div className="text-xl lg:text-2xl font-bold text-wine font-serif">
@@ -93,7 +65,7 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
           </motion.a>
 
           {/* デスクトップナビゲーション */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center justify-center space-x-8 flex-1">
             {navItems.map((item, index) => (
               <motion.a
                 key={item.href}
@@ -169,10 +141,7 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
 
       {/* モバイルメニュー */}
       {isMenuOpen && (
-        <div 
-          ref={menuRef}
-          className="fixed bottom-16 left-0 w-full bg-cream/95 backdrop-blur-elegant border-t border-wine/20 z-50 lg:hidden"
-        >
+        <div className="fixed bottom-16 left-0 w-full bg-cream/95 backdrop-blur-elegant border-t border-wine/20 z-50 lg:hidden">
           <div className="px-4 py-6 space-y-4">
             {navItems.map((item) => (
               <a
