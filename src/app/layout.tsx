@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     siteName: 'Restaurant Sourire',
     images: [
       {
-        url: '/OGP.png',
+        url: 'https://www.sourire.win/OGP.png',
         width: 1200,
         height: 630,
         alt: 'レストラン スーリール - 福岡・けやき通りのミシュラン一つ星フレンチ',
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'レストラン スーリール | 福岡・けやき通りのミシュラン一つ星フレンチ',
     description: 'フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。',
-    images: ['/OGP.png'],
+    images: ['https://www.sourire.win/OGP.png'],
   },
   robots: {
     index: true,
@@ -228,8 +228,8 @@ export default function RootLayout({
         }} />
         
         {/* OGP/サムネイル */}
-        <meta property="og:image" content="/OGP.png" />
-        <meta name="thumbnail" content="/Google.jpg" />
+        <meta property="og:image" content="https://www.sourire.win/OGP.png" />
+        <meta name="thumbnail" content="https://www.sourire.win/Google.jpg" />
       </head>
       <body className={`min-h-screen bg-gradient-to-br from-cream-light to-cream font-serif-jp ${notoSerifJP.variable} ${playfairDisplay.variable} ${cormorantGaramond.variable}`}>
         <div id="top" />
