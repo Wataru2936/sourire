@@ -74,6 +74,7 @@ export default function HeroSection({ language }: SectionProps) {
                   fill
                   className="object-contain drop-shadow-2xl"
                   priority
+                  fetchPriority="high"
                 />
               </motion.div>
             </div>
