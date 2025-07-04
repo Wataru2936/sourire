@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { SectionProps } from '@/types'
 import { getTranslation } from '@/lib/i18n'
 import Image from 'next/image'
