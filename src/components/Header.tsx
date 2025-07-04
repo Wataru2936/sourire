@@ -25,6 +25,15 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
     { href: '#contact', label: t.common.contact },
   ]
 
+  // ホームにスクロールする関数
+  const scrollToHome = (e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
+    const homeElement = document.getElementById('home')
+    if (homeElement) {
+      homeElement.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <motion.header
       className="fixed w-full z-40 bg-cream/95 backdrop-blur-elegant shadow-elegant lg:top-0 lg:left-0 top-auto bottom-0 left-0 lg:bottom-auto"
@@ -37,7 +46,8 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
           {/* ロゴ */}
           <motion.a
             href="#home"
-            className="flex items-center lg:static fixed left-4 bottom-2 z-50"
+            onClick={scrollToHome}
+            className="flex items-center fixed left-4 bottom-2 z-50 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
