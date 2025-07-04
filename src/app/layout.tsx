@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://sourire-fukuoka.com'),
+  metadataBase: new URL('https://www.sourire.win'),
   alternates: {
     canonical: '/',
     languages: {
@@ -61,13 +61,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ja_JP',
-    url: 'https://sourire-fukuoka.com',
+    url: 'https://www.sourire.win',
     title: 'レストラン スーリール | 福岡・けやき通りのミシュラン一つ星フレンチ',
     description: 'フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。',
     siteName: 'Restaurant Sourire',
     images: [
       {
-        url: '/images/og/og-main.jpg',
+        url: '/images/OGP.png',
         width: 1200,
         height: 630,
         alt: 'レストラン スーリール - 福岡・けやき通りのミシュラン一つ星フレンチ',
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'レストラン スーリール | 福岡・けやき通りのミシュラン一つ星フレンチ',
     description: 'フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。',
-    images: ['/images/og/og-main.jpg'],
+    images: ['/images/OGP.png'],
   },
   robots: {
     index: true,
@@ -111,6 +111,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#8B0000" />
         <meta name="msapplication-TileColor" content="#8B0000" />
+        <meta name="robots" content="index, follow" />
         
         {/* 構造化データ（JSON-LD） */}
         <script
@@ -122,8 +123,8 @@ export default function RootLayout({
               "name": "レストラン スーリール",
               "alternateName": "Restaurant Sourire",
               "description": "福岡市・けやき通りにあるミシュラン一つ星フレンチレストラン",
-              "image": "https://sourire-fukuoka.com/images/og/og-main.jpg",
-              "url": "https://sourire-fukuoka.com",
+              "image": "https://www.sourire.win/images/OGP.png",
+              "url": "https://www.sourire.win",
               "telephone": "+81-92-753-6324",
               "email": "info@sourire-fukuoka.com",
               "address": {
@@ -145,7 +146,7 @@ export default function RootLayout({
               "servesCuisine": "French",
               "priceRange": "$$$$",
               "acceptsReservations": true,
-              "hasMenu": "https://sourire-fukuoka.com#menu",
+              "hasMenu": "https://www.sourire.win#menu",
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.8",
