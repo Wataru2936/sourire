@@ -6,7 +6,7 @@ export async function GET() {
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
     '  <url>\n' +
     '    <loc>https://www.sourire.win/</loc>\n' +
-    `    <lastmod>${new Date().toISOString().split('T')[0]}</lastmod>\n` +
+    '    <lastmod>2025-07-04</lastmod>\n' +
     '    <changefreq>weekly</changefreq>\n' +
     '    <priority>1.0</priority>\n' +
     '  </url>\n' +
