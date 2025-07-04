@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     siteName: 'Restaurant Sourire',
     images: [
       {
-        url: '/images/OGP.png',
+        url: '/OGP.png',
         width: 1200,
         height: 630,
         alt: 'レストラン スーリール - 福岡・けやき通りのミシュラン一つ星フレンチ',
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'レストラン スーリール | 福岡・けやき通りのミシュラン一つ星フレンチ',
     description: 'フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。',
-    images: ['/images/OGP.png'],
+    images: ['/OGP.png'],
   },
   robots: {
     index: true,
@@ -116,7 +116,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className="scroll-smooth">
       <head>
-        <link rel="icon" href="https://www.sourire.win/favicon.png" />
+        <link rel="icon" href="/images/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#8B0000" />
         <meta name="msapplication-TileColor" content="#8B0000" />
@@ -154,7 +154,7 @@ export default function RootLayout({
               "name": "レストラン スーリール",
               "alternateName": "Restaurant Sourire",
               "description": "福岡市・けやき通りにあるミシュラン一つ星フレンチレストラン",
-              "image": "https://www.sourire.win/images/OGP.png",
+              "image": "https://www.sourire.win/OGP.png",
               "url": "https://www.sourire.win",
               "telephone": "+81-92-753-6324",
               "email": "info@sourire-fukuoka.com",
@@ -228,8 +228,8 @@ export default function RootLayout({
         }} />
         
         {/* OGP/サムネイル */}
-        <meta property="og:image" content="/images/OGP.png" />
-        <meta name="thumbnail" content="/images/Google.jpg" />
+        <meta property="og:image" content="/OGP.png" />
+        <meta name="thumbnail" content="/Google.jpg" />
       </head>
       <body className={`min-h-screen bg-gradient-to-br from-cream-light to-cream font-serif-jp ${notoSerifJP.variable} ${playfairDisplay.variable} ${cormorantGaramond.variable}`}>
         <div id="top" />
