@@ -129,29 +129,17 @@ export default function MenuSection({ language }: SectionProps) {
     <section id="menu" className="section-spacing bg-warm-gray">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* セクションヘッダー */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-wine font-serif mb-6">
             {t.menu.title}
           </h2>
           <p className="text-lg text-black/70 max-w-2xl mx-auto leading-relaxed">
             {t.menu.seasonal}
           </p>
-        </motion.div>
+        </div>
 
         {/* タブナビゲーション */}
-        <motion.div
-          className="flex justify-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
+        <div className="flex justify-center mb-12">
           <div className="bg-cream rounded-full p-2 shadow-elegant">
             <button
               onClick={() => setActiveTab('lunch')}
@@ -174,25 +162,14 @@ export default function MenuSection({ language }: SectionProps) {
               {t.menu.dinner}
             </button>
           </div>
-        </motion.div>
+        </div>
 
         {/* メニューカード */}
-        <motion.div
-          className="grid md:grid-cols-2 gap-8 lg:gap-12"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true }}
-        >
-          {currentMenuData.map((course, index) => (
-            <motion.div
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+          {currentMenuData.map((course) => (
+            <div
               key={course.id}
               className="bg-cream rounded-lg overflow-hidden shadow-elegant hover:shadow-xl transition-all duration-500"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.02, y: -5 }}
             >
               {/* 料理画像 */}
               <div className="relative h-64 overflow-hidden">
@@ -231,22 +208,16 @@ export default function MenuSection({ language }: SectionProps) {
                   </a>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* 注記 */}
-        <motion.div
-          className="text-center mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          viewport={{ once: true }}
-        >
+        <div className="text-center mt-12">
           <p className="text-black/60">
             {t.menu.allergens}
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -142,39 +142,27 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
 
       {/* モバイルメニュー */}
       {isMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 100 }}
-          transition={{ duration: 0.3 }}
-          className="fixed bottom-16 left-0 w-full bg-cream/95 backdrop-blur-elegant border-t border-wine/20 z-50 lg:hidden"
-        >
+        <div className="fixed bottom-16 left-0 w-full bg-cream/95 backdrop-blur-elegant border-t border-wine/20 z-50 lg:hidden">
           <div className="px-4 py-6 space-y-4">
-            {navItems.map((item, index) => (
-              <motion.a
+            {navItems.map((item) => (
+              <a
                 key={item.href}
                 href={item.href}
                 className="block text-black hover:text-wine transition-colors duration-300 font-medium py-2 border-b border-warm-gray/50"
                 onClick={() => setIsMenuOpen(false)}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
               >
                 {item.label}
-              </motion.a>
+              </a>
             ))}
-            <motion.a
+            <a
               href="#contact"
               className="block text-center bg-wine hover:bg-wine-dark text-cream-light px-6 py-3 rounded-full font-medium transition-all duration-300 mt-4"
               onClick={() => setIsMenuOpen(false)}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: 0.4 }}
             >
               {t.common.reservation}
-            </motion.a>
+            </a>
           </div>
-        </motion.div>
+        </div>
       )}
     </motion.header>
   )
