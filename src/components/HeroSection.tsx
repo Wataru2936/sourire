@@ -19,11 +19,32 @@ export default function HeroSection({ language }: SectionProps) {
     '/images/Desert1.webp',
   ];
   const [current, setCurrent] = useState(0);
+
+  // 画像プリロード
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
-    }, 4000);
-    return () => clearInterval(timer);
+    images.forEach((src) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, []);
+
+  // 高精度なスライドショータイマー（requestAnimationFrame）
+  useEffect(() => {
+    let frame: number;
+    let lastTime = performance.now();
+    let acc = 0;
+    const interval = 4000; // 4秒
+    function tick(now: number) {
+      acc += now - lastTime;
+      lastTime = now;
+      if (acc >= interval) {
+        setCurrent((prev) => (prev + 1) % images.length);
+        acc = 0;
+      }
+      frame = requestAnimationFrame(tick);
+    }
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
   }, [images.length]);
 
   return (
