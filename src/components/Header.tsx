@@ -16,7 +16,7 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
   const t = getTranslation(language)
 
   const navItems = [
-    { href: '#hero', label: 'Home' },
+    { href: '#home', label: 'Home' },
     { href: '#about', label: t.common.about || '私たちについて' },
     { href: '#menu', label: t.common.menu },
     { href: '#info', label: t.common.info || '店舗情報' },
@@ -36,7 +36,7 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
         <div className="flex justify-between items-center py-2 lg:py-6">
           {/* ロゴ */}
           <motion.a
-            href="#hero"
+            href="#home"
             className="flex items-center lg:static fixed left-4 bottom-2 z-50"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

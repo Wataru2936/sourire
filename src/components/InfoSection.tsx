@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { SectionProps } from '@/types'
 import { getTranslation } from '@/lib/i18n'
 import { Phone, MapPin, CreditCard, Ban, Users, Instagram } from 'lucide-react'
@@ -76,39 +75,23 @@ export default function InfoSection({ language }: SectionProps) {
     <section id="info" className="section-spacing bg-gradient-to-b from-cream to-cream-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* セクションヘッダー */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-wine font-serif mb-6">
             {t.info.title}
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* 左側：店舗情報 */}
-          <motion.div
-            className="space-y-8"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="space-y-8">
             {/* 基本情報 */}
             <div className="bg-cream rounded-lg p-6 shadow-elegant">
               <h3 className="text-2xl font-bold text-wine font-serif mb-6">{t.info.basicInfo}</h3>
               <div className="space-y-4">
                 {infoItems.map((item, index) => (
-                  <motion.div
+                  <div
                     key={index}
                     className="flex items-start gap-4 p-3 rounded-lg hover:bg-wine/5 transition-colors duration-300"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
                   >
                     <div className="text-wine mt-1">
                       {item.icon}
@@ -129,19 +112,13 @@ export default function InfoSection({ language }: SectionProps) {
                         </div>
                       )}
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </div>
 
             {/* 営業時間詳細 */}
-            <motion.div
-              className="bg-wine/5 rounded-lg p-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-            >
+            <div className="bg-wine/5 rounded-lg p-6">
               <h4 className="text-xl font-bold text-wine font-serif mb-4">{t.info.operatingHours}</h4>
               <div className="space-y-3">
                 <div className="space-y-2">
@@ -159,45 +136,29 @@ export default function InfoSection({ language }: SectionProps) {
                   <span className="font-medium text-wine">{t.info.wednesdayClosed}</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* 特徴・サービス */}
-            <motion.div
-              className="bg-cream rounded-lg p-6 shadow-elegant"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
+            <div className="bg-cream rounded-lg p-6 shadow-elegant">
               <h4 className="text-xl font-bold text-wine font-serif mb-4">{t.info.characteristics}</h4>
               <div className="grid sm:grid-cols-2 gap-3">
                 {features.map((feature, index) => (
-                  <motion.div
+                  <div
                     key={index}
                     className="flex items-center gap-3 p-2 rounded-lg"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
-                    viewport={{ once: true }}
                   >
                     <div className="text-wine">
                       {feature.icon}
                     </div>
                     <span className="text-black/80 text-sm">{feature.label}</span>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* 右側：地図 */}
-          <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="space-y-6">
             {/* Googleマップ - 遅延読み込み最適化 */}
             <div className="bg-cream rounded-lg overflow-hidden shadow-elegant">
               <div className="p-4 bg-wine text-cream-light">
@@ -237,13 +198,7 @@ export default function InfoSection({ language }: SectionProps) {
             </div>
 
             {/* アクセス詳細 */}
-            <motion.div
-              className="bg-cream rounded-lg p-6 shadow-elegant"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
-            >
+            <div className="bg-cream rounded-lg p-6 shadow-elegant">
               <h4 className="text-xl font-bold text-wine font-serif mb-4">{t.info.access}</h4>
               <div className="space-y-2 text-black/80 text-sm">
                 <div>{t.info.nearestStation}</div>
@@ -254,16 +209,10 @@ export default function InfoSection({ language }: SectionProps) {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* その他・注意事項 */}
-            <motion.div
-              className="bg-wine/10 rounded-lg p-6 shadow-elegant"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              viewport={{ once: true }}
-            >
+            <div className="bg-wine/10 rounded-lg p-6 shadow-elegant">
               <h4 className="text-xl font-bold text-wine font-serif mb-4">{t.info.other}</h4>
               <div className="space-y-2 text-black/80 text-sm">
                 <div>
@@ -279,8 +228,8 @@ export default function InfoSection({ language }: SectionProps) {
                 </ul>
                 <div>{t.info.thankYou}</div>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
