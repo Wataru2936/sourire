@@ -57,7 +57,7 @@ export default function HeroSection({ language }: SectionProps) {
   }, [images.length, imagesLoaded]);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* 背景画像とオーバーレイ（スライドショー） */}
       <div className="absolute inset-0 z-0">
         {images.map((img, idx) => (
@@ -172,20 +172,6 @@ export default function HeroSection({ language }: SectionProps) {
             </a>
           </div>
         </div>
-      </div>
-
-      {/* スクロールインジケーター */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <button
-          className="text-cream-light cursor-pointer bg-transparent border-none p-0"
-          onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-          aria-label="下のセクションにスクロール"
-        >
-          <svg className="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-          <p className="text-sm mt-2 tracking-wide">Scroll</p>
-        </button>
       </div>
     </section>
   )
