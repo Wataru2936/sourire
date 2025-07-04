@@ -51,7 +51,7 @@ export default function HeroSection({ language }: SectionProps) {
     
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 2500); // 2.5秒間隔
+    }, 4000); // 4秒間隔
     
     return () => clearInterval(interval);
   }, [images.length, imagesLoaded]);
@@ -95,19 +95,19 @@ export default function HeroSection({ language }: SectionProps) {
                 />
               </div>
             </div>
-            
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-cream-light font-serif mb-2 whitespace-pre-line">
-              {t.hero.title.split('\n').map((line, i) => (
-                <span key={i}>
-                  {line}
-                  {i !== t.hero.title.split('\n').length - 1 && <br />}
-                </span>
-              ))}
-            </h1>
-            <p className="text-xl sm:text-2xl lg:text-3xl text-gold font-elegant tracking-widest">
-              {t.hero.subtitle}
-            </p>
           </div>
+
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-cream-light font-serif mb-2 whitespace-pre-line">
+            {t.hero.title.split('\n').map((line, i) => (
+              <span key={i}>
+                {line}
+                {i !== t.hero.title.split('\n').length - 1 && <br />}
+              </span>
+            ))}
+          </h1>
+          <p className="text-xl sm:text-2xl lg:text-3xl text-gold font-elegant tracking-widest">
+            {t.hero.subtitle}
+          </p>
 
           {/* ミシュラン星とキャッチコピー */}
           <div className="mb-8 space-y-4">
@@ -172,20 +172,6 @@ export default function HeroSection({ language }: SectionProps) {
             </a>
           </div>
         </div>
-      </div>
-
-      {/* スクロールインジケーター */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <button
-          className="text-cream-light cursor-pointer bg-transparent border-none p-0"
-          onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-          aria-label="下のセクションにスクロール"
-        >
-          <svg className="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-          <p className="text-sm mt-2 tracking-wide">Scroll</p>
-        </button>
       </div>
     </section>
   )

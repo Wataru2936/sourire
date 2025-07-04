@@ -114,7 +114,11 @@ export default function RootLayout({
   return (
     <html lang="ja" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="https://www.sourire.win/favicon.png" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#8B0000" />
         <meta name="msapplication-TileColor" content="#8B0000" />
         <meta name="robots" content="index, follow" />
@@ -122,7 +126,7 @@ export default function RootLayout({
         
         {/* プリロード - クリティカルリソース */}
         <link rel="preload" href="/images/Sourire_logo.png" as="image" type="image/png" />
-        <link rel="preload" href="/images/lunch1.jpeg" as="image" type="image/jpeg" />
+        <link rel="preload" href="/images/lunch1.jpeg" as="image" type="image/webp" />
         
         {/* DNSプリフェッチ - 外部リソース */}
         <link rel="dns-prefetch" href="//www.google.com" />

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { SectionProps, Language } from '@/types'
 import { getTranslation } from '@/lib/i18n'
@@ -13,7 +13,6 @@ interface HeaderProps extends SectionProps {
 
 export default function Header({ language, onLanguageChange }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const menuRef = useRef<HTMLDivElement>(null)
   const t = getTranslation(language)
 
   const navItems = [
@@ -26,30 +25,38 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
     { href: '#contact', label: t.common.contact },
   ]
 
-  // バーガーメニューの外側クリックで閉じる
+  const scrollToHome = () => {
+    document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  // バーガーメニュー展開中のページ全体クリック監視
   useEffect(() => {
+    if (!isMenuOpen) return
+
     const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsMenuOpen(false)
+      const target = event.target as HTMLElement
+      // ヘッダー内の要素をクリックした場合は閉じない
+      if (target.closest('header')) {
+        return
       }
+      // メニュー本体をクリックした場合は閉じない
+      if (target.closest('.mobile-menu')) {
+        return
+      }
+      // それ以外の場所をクリックしたらメニューを閉じる
+      setIsMenuOpen(false)
     }
 
-    if (isMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside)
-    }
+    // 少し遅延を入れてイベントリスナーを追加（メニューが開くアニメーション完了後）
+    const timer = setTimeout(() => {
+      document.addEventListener('click', handleClickOutside, true)
+    }, 100)
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
+      clearTimeout(timer)
+      document.removeEventListener('click', handleClickOutside, true)
     }
   }, [isMenuOpen])
-
-  // ホームにスクロールする関数
-  const scrollToHome = () => {
-    const homeElement = document.getElementById('home')
-    if (homeElement) {
-      homeElement.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
 
   return (
     <motion.header
@@ -59,12 +66,16 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-2 lg:py-6">
-          {/* ロゴ */}
+        <div className="flex flex-row lg:flex-row lg:justify-center items-center py-2 lg:py-6 w-full">
+          {/* デスクトップ用ロゴ */}
           <motion.a
             href="#home"
             onClick={scrollToHome}
+<<<<<<< HEAD
             className="flex items-center lg:static fixed left-4 bottom-2 z-50 cursor-pointer"
+=======
+            className="hidden lg:flex items-center lg:static relative z-50 mb-2 lg:mb-0 lg:mr-8"
+>>>>>>> vercel-test-rollback
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -79,7 +90,6 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
                   priority
                 />
               </div>
-              
               {/* ロゴテキスト */}
               <div className="hidden sm:block">
                 <div className="text-xl lg:text-2xl font-bold text-wine font-serif">
@@ -93,7 +103,7 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
           </motion.a>
 
           {/* デスクトップナビゲーション */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center justify-center space-x-8 flex-1">
             {navItems.map((item, index) => (
               <motion.a
                 key={item.href}
@@ -126,8 +136,27 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
             </a>
           </div>
 
-          {/* モバイル：言語切替＆バーガーメニュー */}
+          {/* モバイル：ロゴ、言語切替、電話、バーガーメニュー */}
           <div className="flex lg:hidden items-center w-full justify-between px-4">
+            {/* モバイル用ロゴ */}
+            <motion.a
+              href="#home"
+              onClick={scrollToHome}
+              className="flex items-center justify-center bg-cream/90 hover:bg-cream text-wine w-12 h-12 rounded-full shadow-elegant transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <div className="relative w-8 h-8">
+                <Image
+                  src="/images/Sourire_logo.png"
+                  alt="Restaurant Sourire Logo"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </motion.a>
+            
             <div className="flex-1 flex justify-center">
               <LanguageSwitcher currentLanguage={language} onLanguageChange={onLanguageChange} />
             </div>
@@ -167,32 +196,41 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
         </div>
       </div>
 
-      {/* モバイルメニュー */}
+      {/* モバイルメニューとオーバーレイ */}
       {isMenuOpen && (
-        <div 
-          ref={menuRef}
-          className="fixed bottom-16 left-0 w-full bg-cream/95 backdrop-blur-elegant border-t border-wine/20 z-50 lg:hidden"
-        >
-          <div className="px-4 py-6 space-y-4">
-            {navItems.map((item) => (
+        <>
+          {/* 全画面オーバーレイ - 最前面に配置 */}
+          <div
+            className="fixed inset-0 bg-black/30 z-[9999] lg:hidden"
+            onClick={() => setIsMenuOpen(false)}
+            style={{ 
+              pointerEvents: 'auto',
+              touchAction: 'none'
+            }}
+          />
+          {/* メニュー本体 - オーバーレイより上に配置 */}
+          <div className="mobile-menu fixed bottom-16 left-0 w-full bg-cream/95 backdrop-blur-elegant border-t border-wine/20 z-[10000] lg:hidden">
+            <div className="px-4 py-6 space-y-4">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="block text-black hover:text-wine transition-colors duration-300 font-medium py-2 border-b border-warm-gray/50"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
               <a
-                key={item.href}
-                href={item.href}
-                className="block text-black hover:text-wine transition-colors duration-300 font-medium py-2 border-b border-warm-gray/50"
+                href="#contact"
+                className="block text-center bg-wine hover:bg-wine-dark text-cream-light px-6 py-3 rounded-full font-medium transition-all duration-300 mt-4"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {item.label}
+                {t.common.reservation}
               </a>
-            ))}
-            <a
-              href="#contact"
-              className="block text-center bg-wine hover:bg-wine-dark text-cream-light px-6 py-3 rounded-full font-medium transition-all duration-300 mt-4"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {t.common.reservation}
-            </a>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </motion.header>
   )
