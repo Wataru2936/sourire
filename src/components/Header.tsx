@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { SectionProps, Language } from '@/types'
 import { getTranslation } from '@/lib/i18n'
@@ -13,6 +13,7 @@ interface HeaderProps extends SectionProps {
 
 export default function Header({ language, onLanguageChange }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
   const t = getTranslation(language)
 
   const navItems = [
@@ -24,6 +25,31 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
     { href: '#instagram', label: t.common.instagram },
     { href: '#contact', label: t.common.contact },
   ]
+
+  // バーガーメニューの外側クリックで閉じる
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMenuOpen])
+
+  // ホームにスクロールする関数
+  const scrollToHome = () => {
+    const homeElement = document.getElementById('home')
+    if (homeElement) {
+      homeElement.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <motion.header
@@ -37,7 +63,8 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
           {/* ロゴ */}
           <motion.a
             href="#home"
-            className="flex items-center lg:static fixed left-4 bottom-2 z-50"
+            onClick={scrollToHome}
+            className="flex items-center lg:static fixed left-4 bottom-2 z-50 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -142,7 +169,10 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
 
       {/* モバイルメニュー */}
       {isMenuOpen && (
-        <div className="fixed bottom-16 left-0 w-full bg-cream/95 backdrop-blur-elegant border-t border-wine/20 z-50 lg:hidden">
+        <div 
+          ref={menuRef}
+          className="fixed bottom-16 left-0 w-full bg-cream/95 backdrop-blur-elegant border-t border-wine/20 z-50 lg:hidden"
+        >
           <div className="px-4 py-6 space-y-4">
             {navItems.map((item) => (
               <a
