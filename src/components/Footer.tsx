@@ -41,10 +41,6 @@ export default function Footer({ language }: SectionProps) {
           {/* ブランド情報 */}
           <motion.div
             className="lg:col-span-2"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
           >
             <div className="mb-8">
               <h3 className="text-3xl lg:text-4xl font-bold font-serif mb-2">
@@ -67,8 +63,6 @@ export default function Footer({ language }: SectionProps) {
             <motion.a
               href={`tel:${t.common.phoneNumber}`}
               className="inline-flex items-center gap-3 bg-wine hover:bg-wine-dark text-cream-light px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
             >
               <Phone className="w-6 h-6 text-cream-light" />
               {t.common.reservation}
@@ -76,12 +70,7 @@ export default function Footer({ language }: SectionProps) {
           </motion.div>
 
           {/* クイックリンク */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
+          <motion.div>
             <h4 className="text-xl font-bold font-serif mb-6 text-gold-light">Menu</h4>
             <nav className="space-y-3">
               {quickLinks.map((link, index) => (
@@ -89,11 +78,6 @@ export default function Footer({ language }: SectionProps) {
                   key={link.href}
                   href={link.href}
                   className="block text-cream-light/80 hover:text-cream-light transition-colors duration-300 hover:translate-x-2"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ x: 8 }}
                 >
                   {link.label}
                 </motion.a>
@@ -102,12 +86,7 @@ export default function Footer({ language }: SectionProps) {
           </motion.div>
 
           {/* 連絡先情報 */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
+          <motion.div>
             <h4 className="text-xl font-bold font-serif mb-6 text-gold-light">{t.common.contact}</h4>
             
             {/* 基本情報 */}
@@ -139,11 +118,6 @@ export default function Footer({ language }: SectionProps) {
                   target={contact.href.startsWith('http') ? '_blank' : undefined}
                   rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                   className="flex items-center gap-3 text-cream-light/80 hover:text-cream-light transition-all duration-300 hover:translate-x-2"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ x: 8 }}
                 >
                   <span className="text-gold-light">{contact.icon}</span>
                   <span className="text-sm">{contact.value}</span>
@@ -157,10 +131,6 @@ export default function Footer({ language }: SectionProps) {
       {/* ボトムバー */}
       <motion.div
         className="border-t border-cream-light/20 bg-wine-dark"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="text-cream-light/60 text-sm text-center">

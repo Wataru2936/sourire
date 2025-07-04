@@ -114,8 +114,8 @@ export default function RootLayout({
   return (
     <html lang="ja" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
@@ -214,6 +214,10 @@ export default function RootLayout({
             }
           `
         }} />
+        
+        {/* OGP/サムネイル */}
+        <meta property="og:image" content="/images/OGP.png" />
+        <meta name="thumbnail" content="/images/Google.jpg" />
       </head>
       <body className={`min-h-screen bg-gradient-to-br from-cream-light to-cream font-serif-jp ${notoSerifJP.variable} ${playfairDisplay.variable} ${cormorantGaramond.variable}`}>
         <div id="top" />

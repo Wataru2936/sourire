@@ -14,10 +14,6 @@ export default function AboutSection({ language }: SectionProps) {
           {/* 左側：シェフの写真 */}
           <motion.div
             className="relative"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
           >
             <div className="relative overflow-hidden rounded-lg shadow-elegant">
               <div 
@@ -32,10 +28,6 @@ export default function AboutSection({ language }: SectionProps) {
             {/* ミシュラン星の装飾 */}
             <motion.div
               className="absolute -top-4 -right-4 bg-wine text-cream-light p-4 rounded-full shadow-elegant"
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
             >
               <motion.div
                 animate={{ 
@@ -57,29 +49,17 @@ export default function AboutSection({ language }: SectionProps) {
           {/* 右側：テキストコンテンツ */}
           <motion.div
             className="space-y-8"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
           >
             {/* セクションタイトル */}
             <div>
               <motion.h2
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-wine font-serif mb-4"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
               >
                 {t.about.title}
               </motion.h2>
               
               <motion.div
                 className="flex items-center gap-3 mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
               >
                 <img src="/images/ミシュラン星のみ.png" alt="ミシュラン星のみ" className="w-8 h-8 object-contain inline-block rounded-full shadow bg-white" />
                 <span className="text-xl font-bold text-gold-dark">{t.about.michelin}</span>
@@ -89,10 +69,6 @@ export default function AboutSection({ language }: SectionProps) {
             {/* レストランの哲学 */}
             <motion.div
               className="space-y-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
             >
               <blockquote className="text-2xl sm:text-3xl font-serif text-wine italic leading-relaxed border-l-4 border-gold pl-6">
                 &quot;{t.about.philosophy}&quot;
@@ -105,10 +81,6 @@ export default function AboutSection({ language }: SectionProps) {
             {/* シェフ紹介 */}
             <motion.div
               className="bg-cream/50 p-6 rounded-lg border border-wine/10"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
             >
               <div className="flex items-center gap-4 mb-4">
                 <div>
@@ -126,10 +98,6 @@ export default function AboutSection({ language }: SectionProps) {
             {/* 特徴・実績 */}
             <motion.div
               className="grid sm:grid-cols-2 gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              viewport={{ once: true }}
             >
               <div className="text-center p-4 bg-wine/5 rounded-lg">
                 <div className="text-2xl font-bold text-wine font-serif">2019</div>
