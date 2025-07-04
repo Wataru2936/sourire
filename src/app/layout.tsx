@@ -123,6 +123,19 @@ export default function RootLayout({
         <meta name="robots" content="index, follow" />
         <meta name="description" content="福岡市・けやき通りにあるミシュラン一つ星フレンチレストラン「スーリール」。フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。" />
         
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GCJBNGH5FX"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-GCJBNGH5FX');
+            `
+          }}
+        />
+        
         {/* プリロード - クリティカルリソース */}
         <link rel="preload" href="/images/Sourire_logo.png" as="image" type="image/png" />
         <link rel="preload" href="/images/lunch1.jpeg" as="image" type="image/webp" />
