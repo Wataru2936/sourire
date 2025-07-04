@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Serif_JP, Playfair_Display, Cormorant_Garamond } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 // Google Fontsの最適化設定
@@ -222,6 +222,7 @@ export default function RootLayout({
         <div id="top" />
         {children}
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
