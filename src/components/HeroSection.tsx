@@ -57,7 +57,7 @@ export default function HeroSection({ language }: SectionProps) {
   }, [images.length, imagesLoaded]);
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* 背景画像とオーバーレイ（スライドショー） */}
       <div className="absolute inset-0 z-0">
         {images.map((img, idx) => (
