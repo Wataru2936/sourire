@@ -27,34 +27,6 @@ const nextConfig: NextConfig = {
     },
   },
   
-  // バンドル分析
-  webpack: (config, { dev, isServer }) => {
-    // 本番環境での最適化
-    if (!dev && !isServer) {
-      config.optimization = {
-        ...config.optimization,
-        splitChunks: {
-          chunks: 'all',
-          cacheGroups: {
-            vendor: {
-              test: /[\\/]node_modules[\\/]/,
-              name: 'vendors',
-              chunks: 'all',
-            },
-            framer: {
-              test: /[\\/]node_modules[\\/]framer-motion[\\/]/,
-              name: 'framer-motion',
-              chunks: 'all',
-              priority: 10,
-            },
-          },
-        },
-      };
-    }
-    
-    return config;
-  },
-  
   // 圧縮
   compress: true,
   
