@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Serif_JP, Playfair_Display, Cormorant_Garamond } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 
 // Google Fontsの最適化設定
@@ -114,7 +116,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className="scroll-smooth">
       <head>
-
+        <link rel="icon" href="https://www.sourire.win/favicon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#8B0000" />
         <meta name="msapplication-TileColor" content="#8B0000" />
@@ -219,6 +221,7 @@ export default function RootLayout({
       <body className={`min-h-screen bg-gradient-to-br from-cream-light to-cream font-serif-jp ${notoSerifJP.variable} ${playfairDisplay.variable} ${cormorantGaramond.variable}`}>
         <div id="top" />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
