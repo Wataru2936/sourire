@@ -73,23 +73,23 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ja_JP',
     url: 'https://www.sourire.win',
-    title: 'レストラン スーリール | 福岡・けやき通りのミシュラン一つ星フレンチ',
+    title: 'レストラン スーリール | 福岡けやき通りのフレンチ',
     description: 'フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。',
     siteName: 'Restaurant Sourire',
     images: [
       {
-        url: 'https://www.sourire.win/OGP.png',
+        url: 'https://www.sourire.win/images/OGP.png',
         width: 1200,
         height: 630,
-        alt: 'レストラン スーリール - 福岡・けやき通りのミシュラン一つ星フレンチ',
+        alt: 'レストラン スーリール - 福岡けやき通りのフレンチ',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'レストラン スーリール | 福岡・けやき通りのミシュラン一つ星フレンチ',
+    title: 'レストラン スーリール | 福岡けやき通りのフレンチ',
     description: 'フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。',
-    images: ['https://www.sourire.win/OGP.png'],
+    images: ['https://www.sourire.win/images/OGP.png'],
   },
   robots: {
     index: true,
@@ -154,7 +154,7 @@ export default function RootLayout({
               "name": "レストラン スーリール",
               "alternateName": "Restaurant Sourire",
               "description": "福岡市・けやき通りにあるミシュラン一つ星フレンチレストラン",
-              "image": "https://www.sourire.win/OGP.png",
+              "image": "https://www.sourire.win/images/OGP.png",
               "url": "https://www.sourire.win",
               "telephone": "+81-92-753-6324",
               "email": "info@sourire-fukuoka.com",
@@ -228,8 +228,8 @@ export default function RootLayout({
         }} />
         
         {/* OGP/サムネイル */}
-        <meta property="og:image" content="https://www.sourire.win/OGP.png" />
-        <meta name="thumbnail" content="https://www.sourire.win/Google.jpg" />
+        <meta property="og:image" content="https://www.sourire.win/images/OGP.png" />
+        <meta name="thumbnail" content="https://www.sourire.win/images/Google.png" />
       </head>
       <body className={`min-h-screen bg-gradient-to-br from-cream-light to-cream font-serif-jp ${notoSerifJP.variable} ${playfairDisplay.variable} ${cormorantGaramond.variable}`}>
         <div id="top" />
