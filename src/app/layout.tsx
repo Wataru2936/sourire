@@ -127,6 +127,7 @@ export default function RootLayout({
         <meta property="og:title" content="レストラン スーリール - 福岡けやき通りのフレンチ" />
         <meta property="og:description" content="ミシュラン一つ星フレンチレストラン" />
         <meta property="og:image" content="https://www.sourire.win/images/OGP.png" />
+        <meta name="thumbnail" content="https://www.sourire.win/images/Google.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         
         {/* Google Analytics */}
@@ -233,9 +234,6 @@ export default function RootLayout({
           `
         }} />
         
-        {/* OGP/サムネイル */}
-        <meta property="og:image" content="https://www.sourire.win/images/OGP.png" />
-        <meta name="thumbnail" content="https://www.sourire.win/images/Google.jpg" />
       </head>
       <body className={`min-h-screen bg-gradient-to-br from-cream-light to-cream font-serif-jp ${notoSerifJP.variable} ${playfairDisplay.variable} ${cormorantGaramond.variable}`}>
         <div id="top" />
