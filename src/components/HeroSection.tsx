@@ -79,7 +79,7 @@ export default function HeroSection({ language }: SectionProps) {
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <div>
           {/* レストランロゴ */}
-          <div className="mb-8">
+          <div className="mb-8 lg:hidden">
             {/* ロゴ画像 */}
             <div className="flex justify-center mb-6">
               <div className="relative w-24 h-24 lg:w-32 lg:h-32">
