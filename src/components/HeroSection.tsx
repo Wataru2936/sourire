@@ -51,7 +51,7 @@ export default function HeroSection({ language }: SectionProps) {
     
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 4000); // 4秒間隔
+    }, 2500); // 2.5秒間隔
     
     return () => clearInterval(interval);
   }, [images.length, imagesLoaded]);

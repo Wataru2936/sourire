@@ -64,7 +64,7 @@ export default function Header({ language, onLanguageChange }: HeaderProps) {
           <motion.a
             href="#home"
             onClick={scrollToHome}
-            className="flex items-center lg:static fixed left-4 bottom-2 z-50 cursor-pointer"
+            className="flex items-center lg:hidden fixed left-4 bottom-2 z-50 cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
