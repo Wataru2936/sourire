@@ -66,20 +66,8 @@ export default function InstagramSection({ language }: SectionProps) {
         {/* Instagram公式oEmbedウィジェット - 遅延読み込み最適化 */}
         <div 
           id="instagram-container"
-          className="flex flex-col items-center gap-8 relative"
+          className="flex flex-col items-center gap-8"
         >
-          {/* ローディング状態 */}
-          {instagramVisible && !instagramLoaded && (
-            <div className="w-[400px] h-[480px] bg-white rounded-xl shadow-elegant flex items-center justify-center absolute top-0 left-0 z-10">
-              <div className="text-center text-gray-500">
-                <svg className="w-12 h-12 mx-auto mb-4 text-wine" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2zm0 1.5h8.5A4.25 4.25 0 0 1 20.5 7.75v8.5a4.25 4.25 0 0 1-4.25 4.25h-8.5A4.25 4.25 0 0 1 3.5 16.25v-8.5A4.25 4.25 0 0 1 7.75 3.5zm8.25 2.25a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM12 6.5A5.5 5.5 0 1 0 12 17.5a5.5 5.5 0 0 0 0-11zm0 1.5a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"/>
-                </svg>
-                <div className="font-medium">Instagram</div>
-                <div className="text-sm opacity-75">読み込み中...</div>
-              </div>
-            </div>
-          )}
           {/* 遅延読み込みされたInstagram iframe */}
           {instagramVisible && (
             <iframe
@@ -89,12 +77,24 @@ export default function InstagramSection({ language }: SectionProps) {
               frameBorder="0"
               scrolling="no"
               allow="encrypted-media"
-              className="rounded-xl shadow-elegant bg-white relative z-20"
+              className="rounded-xl shadow-elegant bg-white"
               title="Instagram最新投稿"
               loading="lazy"
               onLoad={() => setInstagramLoaded(true)}
-              style={{ display: instagramLoaded ? 'block' : 'none' }}
             />
+          )}
+          
+          {/* ローディング状態 */}
+          {!instagramLoaded && (
+            <div className="w-[400px] h-[480px] bg-white rounded-xl shadow-elegant flex items-center justify-center">
+              <div className="text-center text-gray-500">
+                <svg className="w-12 h-12 mx-auto mb-4 text-wine" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7.75 2A5.75 5.75 0 0 0 2 7.75v8.5A5.75 5.75 0 0 0 7.75 22h8.5A5.75 5.75 0 0 0 22 16.25v-8.5A5.75 5.75 0 0 0 16.25 2zm0 1.5h8.5A4.25 4.25 0 0 1 20.5 7.75v8.5a4.25 4.25 0 0 1-4.25 4.25h-8.5A4.25 4.25 0 0 1 3.5 16.25v-8.5A4.25 4.25 0 0 1 7.75 3.5zm8.25 2.25a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM12 6.5A5.5 5.5 0 1 0 12 17.5a5.5 5.5 0 0 0 0-11zm0 1.5a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"/>
+                </svg>
+                <div className="font-medium">Instagram</div>
+                <div className="text-sm opacity-75">読み込み中...</div>
+              </div>
+            </div>
           )}
         </div>
       </div>

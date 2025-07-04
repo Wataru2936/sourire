@@ -114,7 +114,7 @@ export default function RootLayout({
   return (
     <html lang="ja" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.png" type="image/png" />
+
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#8B0000" />
         <meta name="msapplication-TileColor" content="#8B0000" />
