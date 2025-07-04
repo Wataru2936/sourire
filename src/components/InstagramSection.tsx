@@ -55,6 +55,7 @@ export default function InstagramSection({ language }: SectionProps) {
             allow="encrypted-media"
             className="rounded-xl shadow-elegant bg-white"
             title="Instagram最新投稿"
+            loading="lazy"
           />
         </div>
       </div>

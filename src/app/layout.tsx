@@ -113,6 +113,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#8B0000" />
         <meta name="msapplication-TileColor" content="#8B0000" />
         <meta name="robots" content="index, follow" />
+        <meta name="description" content="福岡市・けやき通りにあるミシュラン一つ星フレンチレストラン「スーリール」。フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。" />
         
         {/* 構造化データ（JSON-LD） */}
         <script

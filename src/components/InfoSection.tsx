@@ -96,7 +96,7 @@ export default function InfoSection({ language }: SectionProps) {
                           href={item.href}
                           className="text-wine hover:underline transition-colors duration-300"
                         >
-                          {item.value}
+                          お電話でのご予約・お問い合わせ: {item.value}
                         </a>
                       ) : (
                         <div className="text-black/70">
@@ -189,6 +189,7 @@ export default function InfoSection({ language }: SectionProps) {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   className="absolute inset-0"
+                  title="Google Mapで店舗位置を表示"
                 />
                 <div className="bg-wine/90 text-cream-light p-4 rounded-lg shadow-lg">
                   <div className="text-center">
