@@ -97,13 +97,13 @@ const nextConfig: NextConfig = {
         ]
       },
       {
-        source: '/favicon.ico',
+        source: '/images/favicon/favicon.svg',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }
         ]
       },
       {
-        source: '/favicon.png',
+        source: '/images/favicon/favicon-96x96.png',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }
         ]
