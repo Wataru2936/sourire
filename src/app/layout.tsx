@@ -116,7 +116,6 @@ export default function RootLayout({
   return (
     <html lang="ja" className="scroll-smooth">
       <head>
-        {/* <link rel="icon" href="https://www.sourire.win/images/favicon.ico" /> */}
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#8B0000" />
         <meta name="msapplication-TileColor" content="#8B0000" />
@@ -130,7 +129,7 @@ export default function RootLayout({
         <meta property="og:image" content="https://www.sourire.win/images/OGP.png" />
         <meta name="thumbnail" content="https://www.sourire.win/images/Google.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        {/*<link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />*/}
+        <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" /> 
         <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
