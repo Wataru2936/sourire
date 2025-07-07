@@ -133,7 +133,6 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" /> 
-        <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
         <link rel="manifest" href="/images/favicon/site.webmanifest" />
         
@@ -169,6 +168,7 @@ export default function RootLayout({
               "alternateName": "Restaurant Sourire",
               "description": "福岡市・けやき通りにあるミシュラン一つ星フレンチレストラン",
               "image": "https://www.sourire.win/images/ogp.jpg",
+              "logo": "https://www.sourire.win/images/ogp.jpg",
               "url": "https://www.sourire.win",
               "telephone": "+81-92-753-6324",
               "email": "info@sourire-fukuoka.com",
