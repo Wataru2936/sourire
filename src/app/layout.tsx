@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     siteName: 'Restaurant Sourire',
     images: [
       {
-        url: 'https://www.sourire.win/images/OGP.png',
+        url: 'https://www.sourire.win/images/ogp.jpg',
         width: 1200,
         height: 630,
         alt: 'レストラン スーリール - 福岡けやき通りのフレンチ',
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'レストラン スーリール | 福岡けやき通りのフレンチ',
     description: 'フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。',
-    images: ['https://www.sourire.win/images/OGP.png'],
+    images: ['https://www.sourire.win/images/ogp.jpg'],
   },
   robots: {
     index: true,
@@ -126,7 +126,9 @@ export default function RootLayout({
         <meta property="og:url" content="https://www.sourire.win/" />
         <meta property="og:title" content="レストラン スーリール - 福岡けやき通りのフレンチ" />
         <meta property="og:description" content="ミシュラン一つ星フレンチレストラン" />
-        <meta property="og:image" content="https://www.sourire.win/images/OGP.png" />
+        <meta property="og:image" content="https://www.sourire.win/images/ogp.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="628" />
         <meta name="thumbnail" content="https://www.sourire.win/images/Google.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
@@ -166,7 +168,7 @@ export default function RootLayout({
               "name": "レストラン スーリール",
               "alternateName": "Restaurant Sourire",
               "description": "福岡市・けやき通りにあるミシュラン一つ星フレンチレストラン",
-              "image": "https://www.sourire.win/images/OGP.png",
+              "image": "https://www.sourire.win/images/ogp.jpg",
               "url": "https://www.sourire.win",
               "telephone": "+81-92-753-6324",
               "email": "info@sourire-fukuoka.com",
