@@ -122,6 +122,7 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#8B0000" />
         <meta name="robots" content="index, follow" />
         <meta name="description" content="福岡市けやき通りにあるフレンチレストラン「スーリール」。フレンチの王道と九州の旬が織りなす美食体験をお楽しみください。" />
+        <meta name="apple-mobile-web-app-title" content="Sourire" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.sourire.win/" />
         <meta property="og:title" content="レストラン スーリール - 福岡けやき通りのフレンチ" />
@@ -130,7 +131,7 @@ export default function RootLayout({
         <meta name="thumbnail" content="https://www.sourire.win/images/Google.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
+        {/* <link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" /> */}
         <link rel="shortcut icon" href="/images/favicon/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
         <link rel="manifest" href="/images/favicon/site.webmanifest" />
